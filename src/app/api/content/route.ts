@@ -23,6 +23,7 @@ export async function GET() {
           ...stored,
           faq: stored.faq ?? defaultContent.faq,
           hotels: stored.hotels ?? defaultContent.hotels,
+          events: stored.events ?? defaultContent.events,
         })
       }
     }

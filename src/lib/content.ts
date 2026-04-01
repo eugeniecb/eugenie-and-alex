@@ -11,15 +11,66 @@ export interface Hotel {
   href: string
 }
 
+export type GuestTier = 'full-weekend' | 'wedding-only'
+
+export interface EventItem {
+  day: string
+  date: string
+  time: string
+  title: string
+  location: string
+  address: string
+  description: string
+  attire: string
+  /** Which guest tiers can see this event */
+  tiers: GuestTier[]
+}
+
 export interface SiteContent {
   home_welcome_title: string
   home_welcome_body: string
   faq: FaqItem[]
   hotels: Hotel[]
+  events: EventItem[]
 }
 
 export const defaultContent: SiteContent = {
   home_welcome_title: "We're getting married!",
+  events: [
+    {
+      day: 'Saturday',
+      date: 'September 5, 2026',
+      time: '7:00 PM',
+      title: 'Welcome Party',
+      location: 'Automobile Club de France',
+      address: '6 place de la Concorde, Paris VIII',
+      description: 'Join us for an evening to kick off the weekend.',
+      attire: 'Cocktail attire',
+      tiers: ['full-weekend'],
+    },
+    {
+      day: 'Sunday',
+      date: 'September 6, 2026',
+      time: '5:00 PM – 1:00 AM',
+      title: 'Wedding Celebration',
+      location: 'Pavillon Ledoyen',
+      address: 'Carré des Champs-Élysées, Paris VIII',
+      description: 'Please join us for our wedding ceremony and reception.',
+      attire: 'Black tie',
+      tiers: ['full-weekend', 'wedding-only'],
+    },
+    {
+      day: 'Monday',
+      date: 'September 7, 2026',
+      time: '10:00 AM',
+      title: 'Farewell Brunch',
+      location: 'Laurent',
+      address: '41 avenue Gabriel, Paris VIII',
+      description: 'One last morning together in Paris. Jackets required for gentlemen; sneakers and jeans not permitted.',
+      attire: 'Smart casual',
+      tiers: ['full-weekend'],
+    },
+  ],
   home_welcome_body:
     'We are so happy to celebrate with you in the City of Light. This website has everything you need — event details, travel tips, and all the ways to be part of our day.',
   faq: [

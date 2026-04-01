@@ -4,8 +4,9 @@ import { useState, useEffect, FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search } from 'lucide-react'
 import guestData from '@/data/guests.json'
+import { defaultContent, EventItem, GuestTier } from '@/lib/content'
 
-type Tier = 'full-weekend' | 'wedding-only'
+type Tier = GuestTier
 interface Guest { name: string; tier: Tier; searchTerms: string[] }
 
 const SESSION_KEY = 'wedding_guest'
@@ -17,57 +18,6 @@ function match(query: string, guest: Guest): boolean {
   return guest.searchTerms.some((term) => term.includes(q))
 }
 
-// ── Event data ─────────────────────────────────────────────────────────────
-
-interface Event {
-  day: string
-  date: string
-  time: string
-  title: string
-  location: string
-  address: string
-  description: string
-  attire: string
-}
-
-const WELCOME_PARTY: Event = {
-  day: 'Saturday',
-  date: 'September 5, 2026',
-  time: '7:00 PM',
-  title: 'Welcome Party',
-  location: 'Automobile Club de France',
-  address: '6 place de la Concorde, Paris VIII',
-  description: 'Join us for an evening to kick off the weekend.',
-  attire: 'Cocktail attire',
-}
-
-const WEDDING: Event = {
-  day: 'Sunday',
-  date: 'September 6, 2026',
-  time: '5:00 PM – 1:00 AM',
-  title: 'Wedding Celebration',
-  location: 'Pavillon Ledoyen',
-  address: 'Carré des Champs-Élysées, Paris VIII',
-  description: 'Please join us for our wedding ceremony and reception.',
-  attire: 'Black tie',
-}
-
-const FAREWELL_BRUNCH: Event = {
-  day: 'Monday',
-  date: 'September 7, 2026',
-  time: '10:00 AM',
-  title: 'Farewell Brunch',
-  location: 'Laurent',
-  address: '41 avenue Gabriel, Paris VIII',
-  description: 'One last morning together in Paris. Jackets required for gentlemen; sneakers and jeans not permitted.',
-  attire: 'Smart casual',
-}
-
-const eventsByTier: Record<Tier, Event[]> = {
-  'full-weekend':  [WELCOME_PARTY, WEDDING, FAREWELL_BRUNCH],
-  'wedding-only':  [WEDDING],
-}
-
 // ── Sub-components ──────────────────────────────────────────────────────────
 
 function Divider() {
@@ -76,7 +26,7 @@ function Divider() {
   )
 }
 
-function EventCard({ event, index }: { event: Event; index: number }) {
+function EventCard({ event, index }: { event: EventItem; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -116,14 +66,20 @@ export default function EventsPage() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<Guest[]>([])
   const [searched, setSearched] = useState(false)
+  const [allEvents, setAllEvents] = useState<EventItem[]>(defaultContent.events)
 
-  // Restore locked guest from session on mount
+  // Restore locked guest from session on mount and fetch live event content
   useEffect(() => {
     try {
       const saved = sessionStorage.getItem(SESSION_KEY)
       if (saved) setLockedGuest(JSON.parse(saved) as Guest)
     } catch {}
     setHydrated(true)
+
+    fetch('/api/content')
+      .then((r) => r.json())
+      .then((data) => { if (data.events) setAllEvents(data.events) })
+      .catch(() => {})
   }, [])
 
   function handleSearch(e: FormEvent) {
@@ -141,7 +97,9 @@ export default function EventsPage() {
   // Avoid flash before sessionStorage is read
   if (!hydrated) return null
 
-  const events = lockedGuest ? eventsByTier[lockedGuest.tier] : null
+  const events = lockedGuest
+    ? allEvents.filter((e) => e.tiers.includes(lockedGuest.tier))
+    : null
 
   return (
     <main style={{ backgroundColor: '#FFF8F0' }}>

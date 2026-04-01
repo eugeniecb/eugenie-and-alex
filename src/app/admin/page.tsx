@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, FormEvent } from 'react'
 import { Plus, Trash2, Save, LogOut, GripVertical, AlertCircle, CheckCircle } from 'lucide-react'
-import { defaultContent, SiteContent, FaqItem, Hotel } from '@/lib/content'
+import { defaultContent, SiteContent, FaqItem, Hotel, EventItem, GuestTier } from '@/lib/content'
 
 const ADMIN_SESSION_KEY = 'admin_token'
 
@@ -148,6 +148,19 @@ export default function AdminPage() {
     update({ hotels })
   }
 
+  function updateEvent(index: number, patch: Partial<EventItem>) {
+    const events = content.events.map((e, i) => (i === index ? { ...e, ...patch } : e))
+    update({ events })
+  }
+
+  function toggleEventTier(index: number, tier: GuestTier) {
+    const event = content.events[index]
+    const tiers = event.tiers.includes(tier)
+      ? event.tiers.filter((t) => t !== tier)
+      : [...event.tiers, tier]
+    updateEvent(index, { tiers })
+  }
+
   async function save() {
     if (!token) return
     setSaving(true)
@@ -278,6 +291,113 @@ export default function AdminPage() {
                 className="font-serif text-base leading-relaxed"
               />
             </div>
+          </div>
+        </section>
+
+        {/* ── Events ── */}
+        <section>
+          <h2 className="font-serif text-xs tracking-[0.2em] uppercase mb-6 pb-2 border-b" style={{ color: '#C5A258', borderColor: '#e8d5c4' }}>
+            Events — {content.events.length} events
+          </h2>
+          <div className="space-y-6">
+            {content.events.map((event, i) => (
+              <div key={i} className="bg-white rounded-lg border p-6 space-y-4" style={{ borderColor: '#e8d5c4' }}>
+                <p className="font-serif text-xs text-stone-400 tracking-wide uppercase">{event.title}</p>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Day</p>
+                    <EditableField
+                      value={event.day}
+                      onChange={(v) => updateEvent(i, { day: v })}
+                      className="font-serif text-sm"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Date</p>
+                    <EditableField
+                      value={event.date}
+                      onChange={(v) => updateEvent(i, { date: v })}
+                      className="font-serif text-sm"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Title</p>
+                    <EditableField
+                      value={event.title}
+                      onChange={(v) => updateEvent(i, { title: v })}
+                      className="font-serif text-base"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Time</p>
+                    <EditableField
+                      value={event.time}
+                      onChange={(v) => updateEvent(i, { time: v })}
+                      className="font-serif text-sm"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Location</p>
+                    <EditableField
+                      value={event.location}
+                      onChange={(v) => updateEvent(i, { location: v })}
+                      className="font-serif text-sm"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Address</p>
+                    <EditableField
+                      value={event.address}
+                      onChange={(v) => updateEvent(i, { address: v })}
+                      className="font-serif text-sm"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Attire</p>
+                    <EditableField
+                      value={event.attire}
+                      onChange={(v) => updateEvent(i, { attire: v })}
+                      className="font-serif text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <p className="font-serif text-xs text-stone-400 mb-1 tracking-wide">Description</p>
+                  <EditableField
+                    value={event.description}
+                    onChange={(v) => updateEvent(i, { description: v })}
+                    multiline
+                    className="font-serif text-sm leading-relaxed"
+                  />
+                </div>
+
+                <div>
+                  <p className="font-serif text-xs text-stone-400 mb-2 tracking-wide">Visible to</p>
+                  <div className="flex gap-3">
+                    {(['full-weekend', 'wedding-only'] as GuestTier[]).map((tier) => (
+                      <button
+                        key={tier}
+                        onClick={() => toggleEventTier(i, tier)}
+                        className="flex items-center gap-2 font-serif text-xs tracking-wide border px-3 py-1.5 transition-colors"
+                        style={{
+                          borderColor: event.tiers.includes(tier) ? '#722F37' : '#e8d5c4',
+                          color: event.tiers.includes(tier) ? '#722F37' : '#a8a29e',
+                          backgroundColor: event.tiers.includes(tier) ? '#fdf2f2' : 'transparent',
+                        }}
+                      >
+                        <span
+                          className="w-2 h-2 rounded-full"
+                          style={{ backgroundColor: event.tiers.includes(tier) ? '#722F37' : '#d6d3d1' }}
+                        />
+                        {tier === 'full-weekend' ? 'Full weekend guests' : 'Wedding-only guests'}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
