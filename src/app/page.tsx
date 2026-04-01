@@ -1,65 +1,133 @@
-import Image from "next/image";
+'use client'
+
+import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.9, ease: 'easeOut', delay },
+  }),
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main>
+      {/* ── Hero ── */}
+      <section className="relative flex h-[100svh] w-full items-center justify-center overflow-hidden">
+        {/* Placeholder background — replace src with your watercolor illustration */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/hero-illustration.jpg')",
+            backgroundColor: '#f5ede4',
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        {/* Soft overlay so text is legible over any illustration */}
+        <div className="absolute inset-0 bg-white/30" />
+
+        {/* Hero text */}
+        <div className="relative z-10 flex flex-col items-center gap-4 px-6 text-center">
+          <motion.h1
+            className="script text-6xl leading-tight sm:text-7xl md:text-8xl"
+            style={{ color: '#722F37' }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={0.1}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Eugénie &amp; Alex
+          </motion.h1>
+
+          <motion.div
+            className="h-px w-24"
+            style={{ backgroundColor: '#C5A258' }}
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+          />
+
+          <motion.p
+            className="font-serif text-base tracking-[0.25em] uppercase sm:text-lg"
+            style={{ color: '#722F37' }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={0.7}
           >
-            Documentation
-          </a>
+            September 6, 2026 &nbsp;·&nbsp; Paris, France
+          </motion.p>
         </div>
-      </main>
-    </div>
-  );
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+          style={{ color: '#722F37' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+        >
+          <span className="font-serif text-xs tracking-widest uppercase" style={{ color: '#C5A258' }}>
+            Scroll
+          </span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+          >
+            <ChevronDown size={18} strokeWidth={1.5} />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ── Welcome ── */}
+      <section
+        className="flex flex-col items-center gap-8 px-6 py-24 text-center"
+        style={{ backgroundColor: '#FFF8F0' }}
+      >
+        <motion.div
+          className="h-px w-16"
+          style={{ backgroundColor: '#C5A258' }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        />
+
+        <motion.h2
+          className="script text-4xl sm:text-5xl"
+          style={{ color: '#722F37' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          We&rsquo;re getting married!
+        </motion.h2>
+
+        <motion.p
+          className="max-w-xl font-serif text-lg leading-relaxed"
+          style={{ color: '#722F37', opacity: 0.85 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.25 }}
+        >
+          We are so happy to celebrate with you in the City of Light.
+          This website has everything you need — event details, travel tips,
+          and all the ways to be part of our day.
+        </motion.p>
+
+        <motion.div
+          className="h-px w-16"
+          style={{ backgroundColor: '#C5A258' }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.35, ease: 'easeOut' }}
+        />
+      </section>
+    </main>
+  )
 }
