@@ -66,10 +66,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <span className="font-serif text-xs tracking-widest uppercase" style={{ color: '#C5A258' }}>
-            Scroll
-          </span>
-          <motion.div
+<motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
           >
