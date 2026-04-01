@@ -31,8 +31,8 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${greatVibes.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-serif">
         <PasswordGate>
-          {/* Garland — fixed top-left corner, behind all content */}
-          <div className="fixed top-[57px] left-0 z-30 pointer-events-none select-none w-56 sm:w-72">
+          {/* Garland top-left */}
+          <div className="fixed top-[57px] left-0 z-30 pointer-events-none select-none w-80 sm:w-[420px]">
             <Image
               src="/garland.png"
               alt=""
@@ -40,6 +40,16 @@ export default function RootLayout({
               height={600}
               className="w-full h-auto"
               priority
+            />
+          </div>
+          {/* Garland bottom-right */}
+          <div className="fixed bottom-0 right-0 z-30 pointer-events-none select-none w-80 sm:w-[420px]">
+            <Image
+              src="/garland-br.png"
+              alt=""
+              width={600}
+              height={600}
+              className="w-full h-auto"
             />
           </div>
           <Navigation />
