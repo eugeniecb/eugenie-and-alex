@@ -70,7 +70,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
         >
           <Image
-            src="/hero-illustration.jpg"
+            src="/hero-illustration.png"
             alt="Watercolor illustration of Eugénie and Alex at Ledoyen, Paris"
             width={1000}
             height={1200}
