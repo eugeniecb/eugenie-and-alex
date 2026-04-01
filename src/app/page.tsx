@@ -1,8 +1,10 @@
 'use client'
 
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { defaultContent, SiteContent } from '@/lib/content'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -11,6 +13,19 @@ const fadeUp = (delay = 0) => ({
 })
 
 export default function Home() {
+  const [welcomeTitle, setWelcomeTitle] = useState(defaultContent.home_welcome_title)
+  const [welcomeBody, setWelcomeBody] = useState(defaultContent.home_welcome_body)
+
+  useEffect(() => {
+    fetch('/api/content')
+      .then((r) => r.json())
+      .then((data: SiteContent) => {
+        if (data.home_welcome_title) setWelcomeTitle(data.home_welcome_title)
+        if (data.home_welcome_body) setWelcomeBody(data.home_welcome_body)
+      })
+      .catch(() => {})
+  }, [])
+
   return (
     <main>
       {/* ── Hero ── */}
@@ -102,7 +117,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          We&rsquo;re getting married!
+          {welcomeTitle}
         </motion.h2>
 
         <motion.p
@@ -113,9 +128,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.25 }}
         >
-          We are so happy to celebrate with you in the City of Light.
-          This website has everything you need — event details, travel tips,
-          and all the ways to be part of our day.
+          {welcomeBody}
         </motion.p>
 
         <motion.div

@@ -1,10 +1,12 @@
 'use client'
 
 import { useState, useEffect, FormEvent } from 'react'
+import { usePathname } from 'next/navigation'
 
 const SESSION_KEY = 'wedding_unlocked'
 
 export default function PasswordGate({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
   const [unlocked, setUnlocked] = useState<boolean | null>(null)
   const [input, setInput] = useState('')
   const [error, setError] = useState(false)
@@ -23,6 +25,9 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
       setInput('')
     }
   }
+
+  // Admin has its own auth — bypass guest password gate
+  if (pathname.startsWith('/admin')) return <>{children}</>
 
   // Avoid flash before sessionStorage is read
   if (unlocked === null) return null
