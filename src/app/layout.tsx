@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-serif">
         <PasswordGate>
           {/* Garland — fixed top-left corner, behind all content */}
-          <div className="fixed top-0 left-0 z-30 pointer-events-none select-none w-56 sm:w-72">
+          <div className="fixed top-[57px] left-0 z-30 pointer-events-none select-none w-56 sm:w-72">
             <Image
               src="/garland.png"
               alt=""
