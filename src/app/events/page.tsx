@@ -204,7 +204,7 @@ export default function EventsPage() {
               >
                 We couldn&rsquo;t find that name.{' '}
                 <a
-                  href="mailto:eugenieandalex2026@gmail.com"
+                  href="mailto:eugenie.gruman@gmail.com"
                   className="underline underline-offset-2 hover:opacity-70 transition-opacity"
                   style={{ color: '#722F37' }}
                 >
