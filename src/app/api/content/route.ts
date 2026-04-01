@@ -1,15 +1,15 @@
 import { NextResponse } from 'next/server'
+import { Redis } from '@upstash/redis'
 import { defaultContent, SiteContent } from '@/lib/content'
 
 const REDIS_KEY = 'site_content_v1'
 
-async function getRedis() {
-  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) return null
-  const { Redis } = await import('@upstash/redis')
-  return new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN,
-  })
+function getRedis() {
+  try {
+    return Redis.fromEnv()
+  } catch {
+    return null
+  }
 }
 
 export async function GET() {
