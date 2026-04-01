@@ -30,21 +30,23 @@ const WEDDING: Event = {
 const WELCOME_PARTY: Event = {
   day: 'Saturday',
   date: 'September 5, 2026',
-  time: 'TBD',
+  time: '7:00 PM',
   title: 'Welcome Party',
-  location: 'TBD',
-  description: 'Kick off the weekend with us! Details coming soon.',
-  attire: 'TBD',
+  location: 'Automobile Club de France\n6 place de la Concorde, Paris VIII',
+  description:
+    'Join us for an evening to kick off the weekend and celebrate with friends and family.',
+  attire: 'Cocktail attire',
 }
 
 const FAREWELL_BRUNCH: Event = {
   day: 'Monday',
   date: 'September 7, 2026',
-  time: 'TBD',
+  time: '10:00 AM',
   title: 'Farewell Brunch',
-  location: 'TBD',
-  description: 'One last morning together before we all head home. Details coming soon.',
-  attire: 'Casual',
+  location: 'Laurent\n41 avenue Gabriel, Paris VIII',
+  description:
+    'One last morning together in Paris before we all head home. Jackets required for gentlemen; sneakers and jeans not permitted.',
+  attire: 'Smart casual',
 }
 
 const eventsByTier: Record<Tier, Event[]> = {
@@ -83,7 +85,9 @@ function EventCard({ event, index }: { event: Event; index: number }) {
       {/* Details */}
       <div className="text-center space-y-1 text-sm" style={{ opacity: 0.85 }}>
         <p className="tracking-wide">{event.time}</p>
-        <p className="tracking-wide">{event.location}</p>
+        {event.location.split('\n').map((line) => (
+          <p key={line} className="tracking-wide">{line}</p>
+        ))}
         {event.attire && (
           <p className="tracking-widest uppercase text-xs pt-1" style={{ color: '#C5A258' }}>
             {event.attire}
