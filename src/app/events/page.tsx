@@ -232,6 +232,23 @@ export default function EventsPage() {
             {events.map((event, i) => (
               <EventCard key={event.title} event={event} index={i} />
             ))}
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: events.length * 0.12 + 0.2 }}
+              className="pt-4"
+            >
+              <a
+                href={`https://www.zola.com/wedding/eugenieandalex/rsvp?name=${encodeURIComponent(lockedGuest.name)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border px-12 py-4 font-serif text-sm tracking-widest uppercase transition-colors hover:bg-white"
+                style={{ borderColor: '#722F37', color: '#722F37' }}
+              >
+                RSVP
+              </a>
+            </motion.div>
           </motion.section>
         )}
 
