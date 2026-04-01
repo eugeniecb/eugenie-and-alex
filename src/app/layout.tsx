@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-serif">
         <PasswordGate>
           {/* Garland top-left */}
-          <div className="fixed top-[57px] left-0 z-30 pointer-events-none select-none w-80 sm:w-[420px]">
+          <div className="fixed top-[57px] left-0 z-30 pointer-events-none select-none w-40 sm:w-[420px]">
             <Image
               src="/garland.png"
               alt=""
@@ -43,7 +43,7 @@ export default function RootLayout({
             />
           </div>
           {/* Garland bottom-right */}
-          <div className="fixed bottom-0 right-0 z-30 pointer-events-none select-none w-80 sm:w-[420px]">
+          <div className="fixed bottom-0 right-0 z-30 pointer-events-none select-none w-40 sm:w-[420px]">
             <Image
               src="/garland-br.png"
               alt=""
