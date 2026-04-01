@@ -1,19 +1,22 @@
 import { NextResponse } from 'next/server'
 import { defaultContent, SiteContent } from '@/lib/content'
 
-const KV_KEY = 'site_content_v1'
+const REDIS_KEY = 'site_content_v1'
 
-async function getKv() {
-  if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) return null
-  const { kv } = await import('@vercel/kv')
-  return kv
+async function getRedis() {
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) return null
+  const { Redis } = await import('@upstash/redis')
+  return new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  })
 }
 
 export async function GET() {
   try {
-    const kv = await getKv()
-    if (kv) {
-      const stored = await kv.get<Partial<SiteContent>>(KV_KEY)
+    const redis = await getRedis()
+    if (redis) {
+      const stored = await redis.get<Partial<SiteContent>>(REDIS_KEY)
       if (stored) {
         return NextResponse.json({
           ...defaultContent,
@@ -35,17 +38,17 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const kv = await getKv()
-  if (!kv) {
+  const redis = await getRedis()
+  if (!redis) {
     return NextResponse.json(
-      { error: 'KV storage not configured. Set up Vercel KV in your dashboard.' },
+      { error: 'Redis not configured. Set up Upstash in your Vercel dashboard.' },
       { status: 503 }
     )
   }
 
   try {
     const body = (await request.json()) as SiteContent
-    await kv.set(KV_KEY, body)
+    await redis.set(REDIS_KEY, body)
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: 'Failed to save' }, { status: 500 })
