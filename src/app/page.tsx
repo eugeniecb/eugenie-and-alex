@@ -3,14 +3,11 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: (delay = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.9, ease: 'easeOut', delay },
-  }),
-}
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.9, ease: 'easeOut' as const, delay },
+})
 
 export default function Home() {
   return (
@@ -33,10 +30,7 @@ export default function Home() {
           <motion.h1
             className="script text-6xl leading-tight sm:text-7xl md:text-8xl"
             style={{ color: '#722F37' }}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.1}
+            {...fadeUp(0.1)}
           >
             Eugénie &amp; Alex
           </motion.h1>
@@ -52,10 +46,7 @@ export default function Home() {
           <motion.p
             className="font-serif text-base tracking-[0.25em] uppercase sm:text-lg"
             style={{ color: '#722F37' }}
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.7}
+            {...fadeUp(0.7)}
           >
             September 6, 2026 &nbsp;·&nbsp; Paris, France
           </motion.p>
