@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
@@ -13,52 +14,42 @@ export default function Home() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section className="relative flex h-[100svh] w-full items-center justify-center overflow-hidden">
-        {/* Placeholder background — replace src with your watercolor illustration */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/hero-illustration.jpg')",
-            backgroundColor: '#f5ede4',
-          }}
+      <section
+        className="flex flex-col items-center gap-8 px-6 pt-16 pb-0 text-center"
+        style={{ backgroundColor: '#FFF8F0' }}
+      >
+        {/* Text */}
+        <motion.h1
+          className="script text-6xl leading-tight sm:text-7xl md:text-8xl"
+          style={{ color: '#722F37' }}
+          {...fadeUp(0.1)}
+        >
+          Eugénie &amp; Alex
+        </motion.h1>
+
+        <motion.div
+          className="h-px w-24"
+          style={{ backgroundColor: '#C5A258' }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
         />
-        {/* Soft overlay so text is legible over any illustration */}
-        <div className="absolute inset-0 bg-white/30" />
 
-        {/* Hero text */}
-        <div className="relative z-10 flex flex-col items-center gap-4 px-6 text-center">
-          <motion.h1
-            className="script text-6xl leading-tight sm:text-7xl md:text-8xl"
-            style={{ color: '#722F37' }}
-            {...fadeUp(0.1)}
-          >
-            Eugénie &amp; Alex
-          </motion.h1>
-
-          <motion.div
-            className="h-px w-24"
-            style={{ backgroundColor: '#C5A258' }}
-            initial={{ scaleX: 0, opacity: 0 }}
-            animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          />
-
-          <motion.p
-            className="font-serif text-base tracking-[0.25em] uppercase sm:text-lg"
-            style={{ color: '#722F37' }}
-            {...fadeUp(0.7)}
-          >
-            September 6, 2026 &nbsp;·&nbsp; Paris, France
-          </motion.p>
-        </div>
+        <motion.p
+          className="font-serif text-base tracking-[0.25em] uppercase sm:text-lg"
+          style={{ color: '#722F37' }}
+          {...fadeUp(0.6)}
+        >
+          September 6, 2026 &nbsp;·&nbsp; Paris, France
+        </motion.p>
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+          className="flex flex-col items-center gap-1"
           style={{ color: '#722F37' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
         >
           <span className="font-serif text-xs tracking-widest uppercase" style={{ color: '#C5A258' }}>
             Scroll
@@ -69,6 +60,23 @@ export default function Home() {
           >
             <ChevronDown size={18} strokeWidth={1.5} />
           </motion.div>
+        </motion.div>
+
+        {/* Illustration — displayed as content, not background */}
+        <motion.div
+          className="w-full max-w-2xl"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
+        >
+          <Image
+            src="/hero-illustration.jpg"
+            alt="Watercolor illustration of Eugénie and Alex at Ledoyen, Paris"
+            width={1000}
+            height={1200}
+            priority
+            className="w-full h-auto"
+          />
         </motion.div>
       </section>
 
