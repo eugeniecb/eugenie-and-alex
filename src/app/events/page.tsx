@@ -240,9 +240,7 @@ export default function EventsPage() {
               className="pt-4"
             >
               <a
-                href={`https://www.zola.com/wedding/eugenieandalex/rsvp?name=${encodeURIComponent(lockedGuest.name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/rsvp"
                 className="inline-block border px-12 py-4 font-serif text-sm tracking-widest uppercase transition-colors hover:bg-white"
                 style={{ borderColor: '#722F37', color: '#722F37' }}
               >
