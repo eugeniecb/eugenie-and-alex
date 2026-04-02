@@ -38,7 +38,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
       <div className="flex flex-col items-center gap-6 rounded-lg border border-stone-200 bg-white px-12 py-14 shadow-sm">
         <p className="font-serif text-3xl tracking-wide text-stone-700">
-          Eugenie &amp; Alex
+          Eugénie &amp; Alex
         </p>
         <p className="font-serif text-sm tracking-widest text-stone-400 uppercase">
           Please enter the password to continue
