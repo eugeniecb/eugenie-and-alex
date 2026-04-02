@@ -1,8 +1,41 @@
 'use client'
 
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import confetti from 'canvas-confetti'
+
+const COLORS = ['#722F37', '#C5A258', '#E8A0BF', '#6B8E23', '#FFFDF9']
 
 export default function RsvpSuccess({ firstName }: { firstName: string }) {
+  useEffect(() => {
+    const isMobile = window.innerWidth < 640
+    const count = isMobile ? 50 : 80
+
+    confetti({
+      particleCount: count,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0, y: 0.6 },
+      colors: COLORS,
+      gravity: 0.8,
+      drift: 0.5,
+      ticks: 200,
+      shapes: ['circle', 'square'],
+    })
+
+    confetti({
+      particleCount: count,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1, y: 0.6 },
+      colors: COLORS,
+      gravity: 0.8,
+      drift: -0.5,
+      ticks: 200,
+      shapes: ['circle', 'square'],
+    })
+  }, [])
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
