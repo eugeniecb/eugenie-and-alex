@@ -109,11 +109,11 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
                         <p className="font-serif text-base font-semibold" style={{ color: '#722F37' }}>
                           {event.name}
                         </p>
-                        <p className="font-serif text-xs" style={{ color: '#722F37', opacity: 0.65 }}>
+                        <p className="font-serif text-sm" style={{ color: '#722F37', opacity: 0.65 }}>
                           {event.date} · {event.time}
                         </p>
                         {isReceptionLinked && (
-                          <p className="font-serif text-xs italic mt-0.5" style={{ color: '#C5A258' }}>
+                          <p className="font-serif text-sm italic mt-0.5" style={{ color: '#C5A258' }}>
                             The reception immediately follows the ceremony
                           </p>
                         )}
@@ -125,7 +125,7 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
                       disabled={isReceptionLinked}
                     />
                     {isReceptionLinked && (
-                      <p className="font-serif text-xs" style={{ color: '#9ca3af' }}>
+                      <p className="font-serif text-sm" style={{ color: '#9ca3af' }}>
                         Set automatically based on your ceremony response
                       </p>
                     )}
@@ -135,7 +135,7 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
 
               {/* Dietary */}
               <div className="pt-2 border-t" style={{ borderColor: '#f0e6d9' }}>
-                <label className="block font-serif text-xs text-stone-400 tracking-widest uppercase mb-2">
+                <label className="block font-serif text-sm text-stone-600 tracking-widest uppercase mb-2">
                   Dietary restrictions or allergies
                 </label>
                 <textarea
@@ -143,7 +143,7 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
                   onChange={(e) => updateResponse(member.id, 'dietaryRestrictions', e.target.value)}
                   placeholder="e.g. vegetarian, nut allergy, kosher"
                   rows={2}
-                  className="w-full border-b bg-transparent font-serif text-sm outline-none resize-none placeholder:text-stone-300"
+                  className="w-full border-b bg-transparent font-serif text-base outline-none resize-none placeholder:text-stone-300"
                   style={{ borderColor: '#e8d5c4', color: '#722F37' }}
                 />
               </div>

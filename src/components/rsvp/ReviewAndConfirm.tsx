@@ -92,13 +92,13 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
                 return (
                   <div key={eventKey} className="flex items-center justify-between gap-4">
                     <div>
-                      <p className="font-serif text-sm" style={{ color: '#722F37' }}>{event.name}</p>
-                      <p className="font-serif text-xs" style={{ color: '#722F37', opacity: 0.55 }}>
+                      <p className="font-serif text-base" style={{ color: '#722F37' }}>{event.name}</p>
+                      <p className="font-serif text-sm" style={{ color: '#722F37', opacity: 0.55 }}>
                         {event.date}
                       </p>
                     </div>
                     <span
-                      className="font-serif text-xs tracking-wide whitespace-nowrap"
+                      className="font-serif text-sm tracking-wide whitespace-nowrap"
                       style={{ color: attending ? '#C5A258' : '#9ca3af' }}
                     >
                       {attending ? 'Attending' : 'Not attending'}
@@ -108,8 +108,8 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
               })}
               {r.dietaryRestrictions && (
                 <div className="pt-2 border-t" style={{ borderColor: '#f0e6d9' }}>
-                  <p className="font-serif text-xs text-stone-400 tracking-widest uppercase mb-1">Dietary notes</p>
-                  <p className="font-serif text-sm" style={{ color: '#722F37', opacity: 0.8 }}>
+                  <p className="font-serif text-sm text-stone-600 tracking-widest uppercase mb-1">Dietary notes</p>
+                  <p className="font-serif text-base" style={{ color: '#722F37', opacity: 0.8 }}>
                     {r.dietaryRestrictions}
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
         <button
           onClick={onBack}
           disabled={submitting}
-          className="flex-1 border py-3.5 font-serif text-sm tracking-widest uppercase transition-colors hover:bg-stone-50 disabled:opacity-40"
+          className="flex-1 border py-3.5 font-serif text-base tracking-widest uppercase transition-colors hover:bg-stone-50 disabled:opacity-40"
           style={{ borderColor: '#e8d5c4', color: '#9c7b7b' }}
         >
           Edit

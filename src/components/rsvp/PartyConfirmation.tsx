@@ -114,7 +114,7 @@ export default function PartyConfirmation({
               {isEditing ? (
                 /* ── Editing name ── */
                 <div className="space-y-3">
-                  <p className="font-serif text-xs text-stone-400 tracking-widest uppercase">Guest name</p>
+                  <p className="font-serif text-sm text-stone-600 tracking-widest uppercase">Guest name</p>
                   <div className="flex gap-2">
                     <input
                       type="text"
@@ -154,7 +154,7 @@ export default function PartyConfirmation({
               ) : isDeclined ? (
                 /* ── Declined bringing guest ── */
                 <div className="flex items-center justify-between">
-                  <p className="font-serif text-sm italic" style={{ color: '#722F37', opacity: 0.55 }}>
+                  <p className="font-serif text-base italic" style={{ color: '#722F37', opacity: 0.55 }}>
                     Not bringing a guest
                   </p>
                   <button
@@ -168,34 +168,34 @@ export default function PartyConfirmation({
               ) : needsDecision ? (
                 /* ── Unknown guest, needs decision ── */
                 <div className="space-y-3">
-                  <p className="font-serif text-sm" style={{ color: '#722F37', opacity: 0.65 }}>
+                  <p className="font-serif text-base" style={{ color: '#722F37', opacity: 0.65 }}>
                     You have a guest whose name we don&rsquo;t have yet.
                   </p>
                   <div className="flex gap-2 flex-wrap">
                     <button
                       onClick={() => startEditing(member.id)}
-                      className="font-serif text-xs tracking-widest uppercase border px-4 py-2 transition-colors hover:bg-stone-50"
+                      className="font-serif text-sm tracking-widest uppercase border px-4 py-2 transition-colors hover:bg-stone-50"
                       style={{ borderColor: '#722F37', color: '#722F37' }}
                     >
                       Add guest name
                     </button>
                     <button
                       onClick={() => decline(member.id)}
-                      className="font-serif text-xs tracking-widest uppercase border px-4 py-2 transition-colors hover:bg-stone-50"
+                      className="font-serif text-sm tracking-widest uppercase border px-4 py-2 transition-colors hover:bg-stone-50"
                       style={{ borderColor: '#e8d5c4', color: '#9c7b7b' }}
                     >
                       Not bringing a guest
                     </button>
                   </div>
                   {errors[member.id] && (
-                    <p className="font-serif text-xs text-red-400">{errors[member.id]}</p>
+                    <p className="font-serif text-sm text-red-400">{errors[member.id]}</p>
                   )}
                 </div>
 
               ) : (
                 /* ── Named member ── */
                 <div className="flex items-center justify-between">
-                  <p className="font-serif text-base" style={{ color: '#722F37' }}>{displayName}</p>
+                  <p className="font-serif text-lg" style={{ color: '#722F37' }}>{displayName}</p>
                   {member.isUnknownGuest && (
                     <button
                       onClick={() => startEditing(member.id)}
@@ -213,7 +213,7 @@ export default function PartyConfirmation({
 
       <button
         onClick={() => { if (validate()) onContinue() }}
-        className="w-full border py-4 font-serif text-sm tracking-widest uppercase transition-colors hover:bg-white mt-2"
+        className="w-full border py-4 font-serif text-base tracking-widest uppercase transition-colors hover:bg-white mt-2"
         style={{ borderColor: '#722F37', color: '#722F37' }}
       >
         Continue

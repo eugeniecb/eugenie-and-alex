@@ -16,7 +16,7 @@ export default function EventToggle({ value, onChange, disabled = false }: Props
         onClick={() => !disabled && onChange(true)}
         whileTap={{ scale: 0.97 }}
         disabled={disabled}
-        className="flex-1 min-w-[140px] py-2.5 px-4 font-serif text-sm tracking-wide border transition-all duration-200"
+        className="flex-1 min-w-[140px] py-2.5 px-4 font-serif text-base tracking-wide border transition-all duration-200"
         style={{
           borderColor: value === true ? '#722F37' : '#e8d5c4',
           backgroundColor: value === true ? '#722F37' : 'white',
@@ -32,7 +32,7 @@ export default function EventToggle({ value, onChange, disabled = false }: Props
         onClick={() => !disabled && onChange(false)}
         whileTap={{ scale: 0.97 }}
         disabled={disabled}
-        className="flex-1 min-w-[140px] py-2.5 px-4 font-serif text-sm tracking-wide border transition-all duration-200"
+        className="flex-1 min-w-[140px] py-2.5 px-4 font-serif text-base tracking-wide border transition-all duration-200"
         style={{
           borderColor: value === false ? '#9c7b7b' : '#e8d5c4',
           backgroundColor: value === false ? '#f5f0f0' : 'white',
