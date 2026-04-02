@@ -5,24 +5,39 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
-// Placeholder photos — replace src values with your Cloudinary URLs when ready.
-// Each entry controls its display size in the masonry grid via `aspect`.
+const BASE = 'https://res.cloudinary.com/dl7hw5hs5/image/upload/f_auto,q_auto'
+
 const photos = [
-  { id: 1,  src: 'https://picsum.photos/seed/ea01/800/1060', alt: 'Eugénie and Alex in Paris',   aspect: 'tall'      },
-  { id: 2,  src: 'https://picsum.photos/seed/ea02/800/600',  alt: 'Strolling along the Seine',   aspect: 'landscape' },
-  { id: 3,  src: 'https://picsum.photos/seed/ea03/700/700',  alt: 'At the Tuileries Garden',     aspect: 'square'    },
-  { id: 4,  src: 'https://picsum.photos/seed/ea04/800/1060', alt: 'Dinner at a bistro',          aspect: 'tall'      },
-  { id: 5,  src: 'https://picsum.photos/seed/ea05/800/550',  alt: 'Sunday morning coffee',       aspect: 'landscape' },
-  { id: 6,  src: 'https://picsum.photos/seed/ea06/700/1050', alt: 'Laughing together',           aspect: 'tall'      },
-  { id: 7,  src: 'https://picsum.photos/seed/ea07/700/700',  alt: 'A quiet moment',              aspect: 'square'    },
-  { id: 8,  src: 'https://picsum.photos/seed/ea08/800/540',  alt: 'Rooftops of Paris',           aspect: 'landscape' },
-  { id: 9,  src: 'https://picsum.photos/seed/ea09/800/1060', alt: 'The proposal',                aspect: 'tall'      },
-  { id: 10, src: 'https://picsum.photos/seed/ea10/700/700',  alt: 'Walking hand in hand',        aspect: 'square'    },
-  { id: 11, src: 'https://picsum.photos/seed/ea11/800/560',  alt: 'Pont des Arts',               aspect: 'landscape' },
-  { id: 12, src: 'https://picsum.photos/seed/ea12/700/1050', alt: 'Golden hour',                 aspect: 'tall'      },
-  { id: 13, src: 'https://picsum.photos/seed/ea13/800/600',  alt: 'Marché des Enfants Rouges',   aspect: 'landscape' },
-  { id: 14, src: 'https://picsum.photos/seed/ea14/700/700',  alt: 'Rainy afternoon',             aspect: 'square'    },
-  { id: 15, src: 'https://picsum.photos/seed/ea15/800/1060', alt: 'Just the two of us',          aspect: 'tall'      },
+  { id: 1,  src: `${BASE}/v1775101986/IMG_2726_otd1x5.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 2,  src: `${BASE}/v1775101977/IMG_2268_vz97cq.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 3,  src: `${BASE}/v1775101963/IMG_4539_x4c1wg.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 4,  src: `${BASE}/v1775101962/IMG_4196_qpe89m.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 5,  src: `${BASE}/v1775101940/IMG_0012_maoq6p.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 6,  src: `${BASE}/v1775101714/IMG_8458_dxyje6.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 7,  src: `${BASE}/v1775101714/IMG_7967_vevdya.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 8,  src: `${BASE}/v1775101713/F1F0B608-E58D-4054-BBB3-BCB4C87921EB_k2msml.jpg`, alt: 'Eugénie and Alex', aspect: 'tall' },
+  { id: 9,  src: `${BASE}/v1775101711/94365BAF-5C14-48C5-88C3-0FD621968458_bn8uzx.jpg`, alt: 'Eugénie and Alex', aspect: 'tall' },
+  { id: 10, src: `${BASE}/v1775101707/5DA76A8F-2231-43E9-8528-5E7F96060D5B_t4me68.jpg`, alt: 'Eugénie and Alex', aspect: 'tall' },
+  { id: 11, src: `${BASE}/v1775101705/IMG_8781_w9ztqp.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 12, src: `${BASE}/v1775101704/IMG_7995_kz0qjn.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 13, src: `${BASE}/v1775101704/IMG_7507_sajxkn.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 14, src: `${BASE}/v1775101703/IMG_7018_x7zpm4.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 15, src: `${BASE}/v1775101703/IMG_6216_mzwgyn.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 16, src: `${BASE}/v1775101702/IMG_6063_tq2czt.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 17, src: `${BASE}/v1775101702/IMG_5783_sbssfd.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 18, src: `${BASE}/v1775101701/IMG_5246_mvcttw.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 19, src: `${BASE}/v1775101701/IMG_5151_p76jvc.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 20, src: `${BASE}/v1775101700/IMG_4395_qzdycz.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 21, src: `${BASE}/v1775101700/IMG_4242_zwccs4.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 22, src: `${BASE}/v1775101699/IMG_4053_nxk7lf.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 23, src: `${BASE}/v1775101699/IMG_3890_eces2a.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 24, src: `${BASE}/v1775101698/IMG_3695_bllxvy.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 25, src: `${BASE}/v1775101698/IMG_3232_gltej3.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 26, src: `${BASE}/v1775101698/IMG_2690_vfuzyw.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 27, src: `${BASE}/v1775101697/IMG_0842_uefoq7.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 28, src: `${BASE}/v1775101697/IMG_1580_ahagsj.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 29, src: `${BASE}/v1775101696/IMG_0219_pkovbz.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
+  { id: 30, src: `${BASE}/v1775101696/IMG_0180_qnasym.jpg`,                        alt: 'Eugénie and Alex', aspect: 'tall'      },
 ]
 
 const aspectClasses: Record<string, string> = {
