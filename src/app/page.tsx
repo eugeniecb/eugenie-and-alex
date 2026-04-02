@@ -39,7 +39,7 @@ export default function Home() {
           style={{ color: '#722F37' }}
           {...fadeUp(0.1)}
         >
-          Eugénie &amp; Alex
+          Eugénie <span className="amp">&amp;</span> Alex
         </motion.h1>
 
         <motion.div

@@ -16,6 +16,10 @@
   font-family: var(--font-great-vibes), cursive;
 }
 
+.amp {
+  font-family: var(--font-amp), cursive;
+}
+
 body {
   background: #FFF8F0;
   color: #722F37;

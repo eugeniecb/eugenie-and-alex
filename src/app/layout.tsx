@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Pinyon_Script } from "next/font/google";
+import { Cormorant_Garamond, Pinyon_Script, Great_Vibes } from "next/font/google";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import PasswordGate from "@/components/PasswordGate";
@@ -17,6 +17,12 @@ const pinyonScript = Pinyon_Script({
   weight: "400",
 });
 
+const greatVibes = Great_Vibes({
+  variable: "--font-amp",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Eugénie & Alex",
   description: "We're getting married in Paris — September 6, 2026",
@@ -28,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${pinyonScript.variable} h-full antialiased`}>
+    <html lang="en" className={`${cormorant.variable} ${pinyonScript.variable} ${greatVibes.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-serif">
         <PasswordGate>
           {/* Garland top-left */}
