@@ -116,134 +116,86 @@ export default function Home() {
         <Image src="/butterfly-blue.png" alt="" width={48} height={48} className="drop-shadow-sm" style={{ transform: 'scaleX(-1)' }} />
       </motion.div>
 
-      {/* ── Hero — full-viewport parallax ── */}
-      <div
-        ref={heroRef}
-        style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}
+      {/* ── Hero ── */}
+      <section
+        className="flex flex-col items-center gap-8 px-6 pt-16 pb-0 text-center"
+        style={{ backgroundColor: '#FFF8F0' }}
       >
-        {/* Layer 1: Sky — slowest (furthest back) */}
+        {/* Text above illustration */}
+        <motion.h1
+          className="script text-6xl leading-tight sm:text-7xl md:text-8xl"
+          style={{ color: '#722F37' }}
+          {...fadeUp(0.1)}
+        >
+          Eugénie <span className="amp">&amp;</span> Alex
+        </motion.h1>
+
         <motion.div
-          style={{
-            y: skyY,
-            position: 'absolute',
-            top: 0, left: 0, right: 0, bottom: 0,
-            willChange: 'transform',
-          }}
-        >
-          <Image src={LAYERS.sky} alt="" fill style={{ objectFit: 'cover' }} sizes="100vw" priority />
-        </motion.div>
+          className="h-px w-24"
+          style={{ backgroundColor: '#C5A258' }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+        />
 
-        {/* Layer 2: Building */}
+        <motion.p
+          className="font-serif text-base tracking-[0.25em] uppercase sm:text-lg"
+          style={{ color: '#722F37' }}
+          {...fadeUp(0.6)}
+        >
+          September 6, 2026 &nbsp;·&nbsp; Paris, France
+        </motion.p>
+
         <motion.div
-          style={{
-            y: buildingY,
-            position: 'absolute',
-            top: 0, left: 0, right: 0, bottom: 0,
-            willChange: 'transform',
-          }}
+          className="flex flex-col items-center gap-1"
+          style={{ color: '#722F37' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <Image src={LAYERS.building} alt="" fill style={{ objectFit: 'cover' }} sizes="100vw" priority />
-        </motion.div>
-
-        {/* Layer 3: Foliage */}
-        <motion.div
-          style={{
-            y: foliageY,
-            position: 'absolute',
-            top: 0, left: 0, right: 0, bottom: 0,
-            willChange: 'transform',
-          }}
-        >
-          <Image src={LAYERS.foliage} alt="" fill style={{ objectFit: 'cover' }} sizes="100vw" priority />
-        </motion.div>
-
-        {/* Layer 4: Ground */}
-        <motion.div
-          style={{
-            y: groundY,
-            position: 'absolute',
-            top: 0, left: 0, right: 0, bottom: 0,
-            willChange: 'transform',
-          }}
-        >
-          <Image src={LAYERS.ground} alt="" fill style={{ objectFit: 'cover' }} sizes="100vw" priority />
-        </motion.div>
-
-        {/* Layer 5: Couple — fastest (closest to viewer) */}
-        <motion.div
-          style={{
-            y: coupleY,
-            position: 'absolute',
-            top: 0, left: 0, right: 0, bottom: 0,
-            willChange: 'transform',
-          }}
-        >
-          <Image src={LAYERS.couple} alt="Eugénie and Alex" fill style={{ objectFit: 'cover' }} sizes="100vw" priority />
-        </motion.div>
-
-        {/* Text overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0, left: 0, right: 0, bottom: 0,
-            zIndex: 10,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            padding: '1.5rem',
-            gap: '1.5rem',
-          }}
-        >
-          <motion.h1
-            className="script text-6xl leading-tight sm:text-7xl md:text-8xl"
-            style={{ color: '#722F37' }}
-            {...fadeUp(0.1)}
-          >
-            Eugénie <span className="amp">&amp;</span> Alex
-          </motion.h1>
-
           <motion.div
-            className="h-px w-24"
-            style={{ backgroundColor: '#C5A258' }}
-            initial={{ scaleX: 0, opacity: 0 }}
-            animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
-          />
-
-          <motion.p
-            className="font-serif text-base tracking-[0.25em] uppercase sm:text-lg"
-            style={{ color: '#722F37' }}
-            {...fadeUp(0.6)}
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
           >
-            September 6, 2026 &nbsp;·&nbsp; Paris, France
-          </motion.p>
-
-          {/* Scroll indicator — pinned to bottom of hero */}
-          <motion.div
-            style={{
-              position: 'absolute',
-              bottom: '2rem',
-              color: '#722F37',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '0.25rem',
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-          >
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
-            >
-              <ChevronDown size={18} strokeWidth={1.5} />
-            </motion.div>
+            <ChevronDown size={18} strokeWidth={1.5} />
           </motion.div>
-        </div>
-      </div>
+        </motion.div>
+
+        {/* Parallax illustration — same footprint as the original (max-w-2xl, 5:6 aspect ratio) */}
+        <motion.div
+          ref={heroRef}
+          className="w-full max-w-2xl"
+          style={{ position: 'relative', aspectRatio: '5 / 6', overflow: 'hidden' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
+        >
+          {/* Layer 1: Sky — slowest (furthest back) */}
+          <motion.div style={{ y: skyY, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, willChange: 'transform' }}>
+            <Image src={LAYERS.sky} alt="" fill style={{ objectFit: 'cover' }} sizes="(max-width: 672px) 100vw, 672px" priority />
+          </motion.div>
+
+          {/* Layer 2: Building */}
+          <motion.div style={{ y: buildingY, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, willChange: 'transform' }}>
+            <Image src={LAYERS.building} alt="" fill style={{ objectFit: 'cover' }} sizes="(max-width: 672px) 100vw, 672px" priority />
+          </motion.div>
+
+          {/* Layer 3: Foliage */}
+          <motion.div style={{ y: foliageY, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, willChange: 'transform' }}>
+            <Image src={LAYERS.foliage} alt="" fill style={{ objectFit: 'cover' }} sizes="(max-width: 672px) 100vw, 672px" priority />
+          </motion.div>
+
+          {/* Layer 4: Ground */}
+          <motion.div style={{ y: groundY, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, willChange: 'transform' }}>
+            <Image src={LAYERS.ground} alt="" fill style={{ objectFit: 'cover' }} sizes="(max-width: 672px) 100vw, 672px" priority />
+          </motion.div>
+
+          {/* Layer 5: Couple — fastest (closest to viewer) */}
+          <motion.div style={{ y: coupleY, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, willChange: 'transform' }}>
+            <Image src={LAYERS.couple} alt="Eugénie and Alex" fill style={{ objectFit: 'cover' }} sizes="(max-width: 672px) 100vw, 672px" priority />
+          </motion.div>
+        </motion.div>
+      </section>
 
       {/* ── Welcome ── */}
       <section
