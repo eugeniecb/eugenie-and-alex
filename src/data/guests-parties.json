@@ -1,0 +1,2756 @@
+{
+  "parties": [
+    {
+      "partyId": "jade-bassil-and-felipe-unda",
+      "members": [
+        {
+          "id": "jade-bassil",
+          "firstName": "Jade",
+          "lastName": "Bassil",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "felipe-unda",
+          "firstName": "Felipe",
+          "lastName": "Unda",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "natalie-borowski-and-reid-douty",
+      "members": [
+        {
+          "id": "natalie-borowski",
+          "firstName": "Natalie",
+          "lastName": "Borowski",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "reid-douty",
+          "firstName": "Reid",
+          "lastName": "Douty",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "momoko-brantley-and-arthur-brantley",
+      "members": [
+        {
+          "id": "momoko-brantley",
+          "firstName": "Momoko",
+          "lastName": "Brantley",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "arthur-brantley",
+          "firstName": "Arthur",
+          "lastName": "Brantley",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "thibaud-caspari-and-eleonore-carrel-billiard",
+      "members": [
+        {
+          "id": "thibaud-caspari",
+          "firstName": "Thibaud",
+          "lastName": "Caspari",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "eleonore-carrel-billiard",
+          "firstName": "Eléonore",
+          "lastName": "Carrel-Billiard",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "maria-castaner-and-brendan-long",
+      "members": [
+        {
+          "id": "maria-castaner",
+          "firstName": "Maria",
+          "lastName": "Castaner",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "brendan-long",
+          "firstName": "Brendan",
+          "lastName": "Long",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "isabel-chafey-and-marcos-cabarcos",
+      "members": [
+        {
+          "id": "isabel-chafey",
+          "firstName": "Isabel",
+          "lastName": "Chafey",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "marcos-cabarcos",
+          "firstName": "Marcos",
+          "lastName": "Cabarcos",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "kenny-chinsky-and-julie-hyde-edwards",
+      "members": [
+        {
+          "id": "kenny-chinsky",
+          "firstName": "Kenny",
+          "lastName": "Chinsky",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "julie-hyde-edwards",
+          "firstName": "Julie",
+          "lastName": "Hyde-Edwards",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "chloe-collier",
+      "members": [
+        {
+          "id": "chloe-collier",
+          "firstName": "Chloé",
+          "lastName": "Collier",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "guest-of-chloe-collier",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "katherine-congleton-and-camron-hassanzadeh",
+      "members": [
+        {
+          "id": "katherine-congleton",
+          "firstName": "Katherine",
+          "lastName": "Congleton",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "camron-hassanzadeh",
+          "firstName": "Camron",
+          "lastName": "Hassanzadeh",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "cyrus-hassanzadeh",
+          "firstName": "Cyrus",
+          "lastName": "Hassanzadeh",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "elliott-cumonow-and-carol-cumonow",
+      "members": [
+        {
+          "id": "elliott-cumonow",
+          "firstName": "Elliott",
+          "lastName": "Cumonow",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "carol-cumonow",
+          "firstName": "Carol",
+          "lastName": "Cumonow",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jeff-cumonow",
+      "members": [
+        {
+          "id": "jeff-cumonow",
+          "firstName": "Jeff",
+          "lastName": "Cumonow",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-jeff-cumonow",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "julien-cutrim-rauzier-and-lu-cutrim-rauzier",
+      "members": [
+        {
+          "id": "julien-cutrim-rauzier",
+          "firstName": "Julien",
+          "lastName": "Cutrim Rauzier",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "lu-cutrim-rauzier",
+          "firstName": "Lu",
+          "lastName": "Cutrim Rauzier",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "sarah-davis-and-scott-davis",
+      "members": [
+        {
+          "id": "sarah-davis",
+          "firstName": "Sarah",
+          "lastName": "Davis",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "scott-davis",
+          "firstName": "Scott",
+          "lastName": "Davis",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "alex-diamond-and-nicole-diamond",
+      "members": [
+        {
+          "id": "alex-diamond",
+          "firstName": "Alex",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "nicole-diamond",
+          "firstName": "Nicole",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jamie-diamond-and-josh-diamond",
+      "members": [
+        {
+          "id": "jamie-diamond",
+          "firstName": "Jamie",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "josh-diamond",
+          "firstName": "Josh",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "rose-diamond",
+          "firstName": "Rose",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "nora-diamond",
+          "firstName": "Nora",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "vicki-diamond-and-michael-diamond",
+      "members": [
+        {
+          "id": "vicki-diamond",
+          "firstName": "Vicki",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "michael-diamond",
+          "firstName": "Michael",
+          "lastName": "Diamond",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "joshua-dubin",
+      "members": [
+        {
+          "id": "joshua-dubin",
+          "firstName": "Joshua",
+          "lastName": "Dubin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-joshua-dubin",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "melina-durande-and-remy-herbaut",
+      "members": [
+        {
+          "id": "melina-durande",
+          "firstName": "Melina",
+          "lastName": "Durande",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "remy-herbaut",
+          "firstName": "Remy",
+          "lastName": "Herbaut",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "nathan-emmons-and-eva-nobel",
+      "members": [
+        {
+          "id": "nathan-emmons",
+          "firstName": "Nathan",
+          "lastName": "Emmons",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "eva-nobel",
+          "firstName": "Eva",
+          "lastName": "Nobel",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "laetitia-feligioni-and-pierre-feligioni",
+      "members": [
+        {
+          "id": "laetitia-feligioni",
+          "firstName": "Laetitia",
+          "lastName": "Feligioni",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "pierre-feligioni",
+          "firstName": "Pierre",
+          "lastName": "Feligioni",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "eden-forman-and-evan-olchowka",
+      "members": [
+        {
+          "id": "eden-forman",
+          "firstName": "Eden",
+          "lastName": "Forman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "evan-olchowka",
+          "firstName": "Evan",
+          "lastName": "Olchowka",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "ellen-gartenberg-and-alan-gartenberg",
+      "members": [
+        {
+          "id": "ellen-gartenberg",
+          "firstName": "Ellen",
+          "lastName": "Gartenberg",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "alan-gartenberg",
+          "firstName": "Alan",
+          "lastName": "Gartenberg",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "barry-goldberg-and-harriet-goldberg",
+      "members": [
+        {
+          "id": "barry-goldberg",
+          "firstName": "Barry",
+          "lastName": "Goldberg",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "harriet-goldberg",
+          "firstName": "Harriet",
+          "lastName": "Goldberg",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jessie-goldberg-and-chaille-biddle",
+      "members": [
+        {
+          "id": "jessie-goldberg",
+          "firstName": "Jessie",
+          "lastName": "Goldberg",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "chaille-biddle",
+          "firstName": "Chaillé",
+          "lastName": "Biddle",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "judy-goldberg",
+      "members": [
+        {
+          "id": "judy-goldberg",
+          "firstName": "Judy",
+          "lastName": "Goldberg",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "graham-johnson-and-sydney-goldberg",
+      "members": [
+        {
+          "id": "graham-johnson",
+          "firstName": "Graham",
+          "lastName": "Johnson",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "sydney-goldberg",
+          "firstName": "Sydney",
+          "lastName": "Goldberg",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "emily-goldman-family",
+      "members": [
+        {
+          "id": "emily-goldman",
+          "firstName": "Emily",
+          "lastName": "Goldman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "isaac-goldman",
+          "firstName": "Isaac",
+          "lastName": "Goldman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "ruth-goldman",
+          "firstName": "Ruth",
+          "lastName": "Goldman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "zoey-goldman",
+          "firstName": "Zoey",
+          "lastName": "Goldman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "gonzague-gruman-and-marie-elise-tosan",
+      "members": [
+        {
+          "id": "gonzague-gruman",
+          "firstName": "Gonzague",
+          "lastName": "Gruman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "marie-elise-tosan",
+          "firstName": "Marie-Elise",
+          "lastName": "Tosan",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "patrick-gruman-and-dorothee-gruman",
+      "members": [
+        {
+          "id": "patrick-gruman",
+          "firstName": "Patrick",
+          "lastName": "Gruman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "dorothee-gruman",
+          "firstName": "Dorothée",
+          "lastName": "Gruman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "pierre-alexandre-gruman-and-antonia-michel",
+      "members": [
+        {
+          "id": "pierre-alexandre-gruman",
+          "firstName": "Pierre-Alexandre",
+          "lastName": "Gruman",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "antonia-michel",
+          "firstName": "Antonia",
+          "lastName": "Michel",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jack-grundy-and-julie-castrillon",
+      "members": [
+        {
+          "id": "jack-grundy",
+          "firstName": "Jack",
+          "lastName": "Grundy",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "julie-castrillon",
+          "firstName": "Julie",
+          "lastName": "Castrillon",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "alix-greaume-and-charles-hennerez",
+      "members": [
+        {
+          "id": "alix-greaume",
+          "firstName": "Alix",
+          "lastName": "Gréaume",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "charles-hennerez",
+          "firstName": "Charles",
+          "lastName": "Hennerez",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "valeria-gutowski-and-carl-gutowski",
+      "members": [
+        {
+          "id": "valeria-gutowski",
+          "firstName": "Valeria",
+          "lastName": "Gutowski",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "carl-gutowski",
+          "firstName": "Carl",
+          "lastName": "Gutowski",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "alissa-heller-and-tzach-abrevaya",
+      "members": [
+        {
+          "id": "alissa-heller",
+          "firstName": "Alissa",
+          "lastName": "Heller",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "tzach-abrevaya",
+          "firstName": "Tzach",
+          "lastName": "Abrevaya",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jared-heller-and-michelle-reisin",
+      "members": [
+        {
+          "id": "jared-heller",
+          "firstName": "Jared",
+          "lastName": "Heller",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "michelle-reisin",
+          "firstName": "Michelle",
+          "lastName": "Reisin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "brittain-henderson-and-stephanie-rey",
+      "members": [
+        {
+          "id": "brittain-henderson",
+          "firstName": "Brittain",
+          "lastName": "Henderson",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "stephanie-rey",
+          "firstName": "Stephanie",
+          "lastName": "Rey",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "charlotte-hinfray-and-dino-yucel",
+      "members": [
+        {
+          "id": "charlotte-hinfray",
+          "firstName": "Charlotte",
+          "lastName": "Hinfray",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "dino-yucel",
+          "firstName": "Dino",
+          "lastName": "Yücel",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "sherri-hodes-and-chuck-hodes",
+      "members": [
+        {
+          "id": "sherri-hodes",
+          "firstName": "Sherri",
+          "lastName": "Hodes",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "chuck-hodes",
+          "firstName": "Chuck",
+          "lastName": "Hodes",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "raphaelle-humbert-and-sebastien-auzenat",
+      "members": [
+        {
+          "id": "raphaelle-humbert",
+          "firstName": "Raphaelle",
+          "lastName": "Humbert",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "sebastien-auzenat",
+          "firstName": "Sebastien",
+          "lastName": "Auzenat",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "nina-ilieva-and-matt-leach",
+      "members": [
+        {
+          "id": "nina-ilieva",
+          "firstName": "Nina",
+          "lastName": "Ilieva",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "matt-leach",
+          "firstName": "Matt",
+          "lastName": "Leach",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "eve-innocent-natali-and-corentin-natali",
+      "members": [
+        {
+          "id": "eve-innocent-natali",
+          "firstName": "Eve",
+          "lastName": "Innocent Natali",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "corentin-natali",
+          "firstName": "Corentin",
+          "lastName": "Natali",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "amir-jahanguiri-and-niki-jahanguiri",
+      "members": [
+        {
+          "id": "amir-jahanguiri",
+          "firstName": "Amir",
+          "lastName": "Jahanguiri",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "niki-jahanguiri",
+          "firstName": "Niki",
+          "lastName": "Jahanguiri",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "kobi-johnson",
+      "members": [
+        {
+          "id": "kobi-johnson",
+          "firstName": "Kobi",
+          "lastName": "Johnson",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-kobi-johnson",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "sawyer-kelly-and-kerstin-huang",
+      "members": [
+        {
+          "id": "sawyer-kelly",
+          "firstName": "Sawyer",
+          "lastName": "Kelly",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "kerstin-huang",
+          "firstName": "Kerstin",
+          "lastName": "Huang",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "hanna-kereszturi-and-jol-hutchings",
+      "members": [
+        {
+          "id": "hanna-kereszturi",
+          "firstName": "Hanna",
+          "lastName": "Kereszturi",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "jol-hutchings",
+          "firstName": "Jol",
+          "lastName": "Hutchings",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jonathan-kersky-and-alice-qin",
+      "members": [
+        {
+          "id": "jonathan-kersky",
+          "firstName": "Jonathan",
+          "lastName": "Kersky",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "alice-qin",
+          "firstName": "Alice",
+          "lastName": "Qin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "addie-keyes-and-jacob-keyes",
+      "members": [
+        {
+          "id": "addie-keyes",
+          "firstName": "Addie",
+          "lastName": "Keyes",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "jacob-keyes",
+          "firstName": "Jacob",
+          "lastName": "Keyes",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "matt-kim-and-elizabeth-yun",
+      "members": [
+        {
+          "id": "matt-kim",
+          "firstName": "Matt",
+          "lastName": "Kim",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "elizabeth-yun",
+          "firstName": "Elizabeth",
+          "lastName": "Yun",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "marina-kleinstein-and-scott-kleinstein",
+      "members": [
+        {
+          "id": "marina-kleinstein",
+          "firstName": "Marina",
+          "lastName": "Kleinstein",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "scott-kleinstein",
+          "firstName": "Scott",
+          "lastName": "Kleinstein",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "bari-kozin-and-steve-kozin",
+      "members": [
+        {
+          "id": "bari-kozin",
+          "firstName": "Bari",
+          "lastName": "Kozin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "steve-kozin",
+          "firstName": "Steve",
+          "lastName": "Kozin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "arjun-kumar",
+      "members": [
+        {
+          "id": "arjun-kumar",
+          "firstName": "Arjun",
+          "lastName": "Kumar",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-arjun-kumar",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "carole-laffargue-family",
+      "members": [
+        {
+          "id": "carole-laffargue",
+          "firstName": "Carole",
+          "lastName": "Laffargue",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "guest-of-carole-laffargue",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "hanna-guerin-laffargue",
+          "firstName": "Hanna",
+          "lastName": "Guérin-Laffargue",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "adele-guerin-laffargue",
+          "firstName": "Adèle",
+          "lastName": "Guérin-Laffargue",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "amelie-lenoir",
+      "members": [
+        {
+          "id": "amelie-lenoir",
+          "firstName": "Amelie",
+          "lastName": "Lenoir",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "guest-of-amelie-lenoir",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "mindy-levinson-and-david-levinson",
+      "members": [
+        {
+          "id": "mindy-levinson",
+          "firstName": "Mindy",
+          "lastName": "Levinson",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "david-levinson",
+          "firstName": "David",
+          "lastName": "Levinson",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "lori-levitt-and-mike-levitt",
+      "members": [
+        {
+          "id": "lori-levitt",
+          "firstName": "Lori",
+          "lastName": "Levitt",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "mike-levitt",
+          "firstName": "Mike",
+          "lastName": "Levitt",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "audrey-lukawski-and-luke-nelson",
+      "members": [
+        {
+          "id": "audrey-lukawski",
+          "firstName": "Audrey",
+          "lastName": "Lukawski",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "luke-nelson",
+          "firstName": "Luke",
+          "lastName": "Nelson",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "meredith-margulies-and-david-winegar",
+      "members": [
+        {
+          "id": "meredith-margulies",
+          "firstName": "Meredith",
+          "lastName": "Margulies",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "david-winegar",
+          "firstName": "David",
+          "lastName": "Winegar",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "norah-margulies",
+          "firstName": "Norah",
+          "lastName": "Margulies",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "caroline-marques",
+      "members": [
+        {
+          "id": "caroline-marques",
+          "firstName": "Caroline",
+          "lastName": "Marques",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-caroline-marques",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "edward-mccarter",
+      "members": [
+        {
+          "id": "edward-mccarter",
+          "firstName": "Edward",
+          "lastName": "McCarter",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-edward-mccarter",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "josephine-mosseray-and-quentin-mosseray",
+      "members": [
+        {
+          "id": "josephine-mosseray",
+          "firstName": "Josephine",
+          "lastName": "Mosseray",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "quentin-mosseray",
+          "firstName": "Quentin",
+          "lastName": "Mosseray",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "tommy-nathan-and-tom-nathan",
+      "members": [
+        {
+          "id": "tommy-nathan",
+          "firstName": "Tommy",
+          "lastName": "Nathan",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "tom-nathan",
+          "firstName": "Tom",
+          "lastName": "Nathan",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "angela-norris-and-andrew-hayes",
+      "members": [
+        {
+          "id": "angela-norris",
+          "firstName": "Angela",
+          "lastName": "Norris",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "andrew-hayes",
+          "firstName": "Andrew",
+          "lastName": "Hayes",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "sam-oh-and-elisa-nguyen",
+      "members": [
+        {
+          "id": "sam-oh",
+          "firstName": "Sam",
+          "lastName": "Oh",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "elisa-nguyen",
+          "firstName": "Elisa",
+          "lastName": "Nguyen",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "maddie-penn-and-kevin-baker",
+      "members": [
+        {
+          "id": "maddie-penn",
+          "firstName": "Maddie",
+          "lastName": "Penn",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "kevin-baker",
+          "firstName": "Kevin",
+          "lastName": "Baker",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jean-francois-rabilloud-and-annie-rabilloud",
+      "members": [
+        {
+          "id": "jean-francois-rabilloud",
+          "firstName": "Jean-François",
+          "lastName": "Rabilloud",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "annie-rabilloud",
+          "firstName": "Annie",
+          "lastName": "Rabilloud",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "emily-rapport-and-john-rosensweig",
+      "members": [
+        {
+          "id": "emily-rapport",
+          "firstName": "Emily",
+          "lastName": "Rapport",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "john-rosensweig",
+          "firstName": "John",
+          "lastName": "Rosensweig",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "daniel-reich",
+      "members": [
+        {
+          "id": "daniel-reich",
+          "firstName": "Daniel",
+          "lastName": "Reich",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-daniel-reich",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "henry-reich",
+      "members": [
+        {
+          "id": "henry-reich",
+          "firstName": "Henry",
+          "lastName": "Reich",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "rita-krasner-and-stephen-reich",
+      "members": [
+        {
+          "id": "rita-krasner",
+          "firstName": "Rita",
+          "lastName": "Krasner",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "stephen-reich",
+          "firstName": "Stephen",
+          "lastName": "Reich",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "dana-reich",
+          "firstName": "Dana",
+          "lastName": "Reich",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "siyen-reich",
+          "firstName": "Siyen",
+          "lastName": "Reich",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "suzie-ritter-and-david-ritter",
+      "members": [
+        {
+          "id": "suzie-ritter",
+          "firstName": "Suzie",
+          "lastName": "Ritter",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "david-ritter",
+          "firstName": "David",
+          "lastName": "Ritter",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "claudia-rivera-and-sachin-puri",
+      "members": [
+        {
+          "id": "claudia-rivera",
+          "firstName": "Claudia",
+          "lastName": "Rivera",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "sachin-puri",
+          "firstName": "Sachin",
+          "lastName": "Puri",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "caily-rubenstein",
+      "members": [
+        {
+          "id": "caily-rubenstein",
+          "firstName": "Caily",
+          "lastName": "Rubenstein",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-caily-rubenstein",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "antoine-sander-and-pauline-lenglart",
+      "members": [
+        {
+          "id": "antoine-sander",
+          "firstName": "Antoine",
+          "lastName": "Sander",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "pauline-lenglart",
+          "firstName": "Pauline",
+          "lastName": "Lenglart",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "betsy-schmidt",
+      "members": [
+        {
+          "id": "betsy-schmidt",
+          "firstName": "Betsy",
+          "lastName": "Schmidt",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-betsy-schmidt",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "carol-sexner-and-mitch-sexner",
+      "members": [
+        {
+          "id": "carol-sexner",
+          "firstName": "Carol",
+          "lastName": "Sexner",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "mitch-sexner",
+          "firstName": "Mitch",
+          "lastName": "Sexner",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "madeleine-shelton-and-jonah-melhado",
+      "members": [
+        {
+          "id": "madeleine-shelton",
+          "firstName": "Madeleine",
+          "lastName": "Shelton",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "jonah-melhado",
+          "firstName": "Jonah",
+          "lastName": "Melhado",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "janice-shulkin-and-glenn-shulkin",
+      "members": [
+        {
+          "id": "janice-shulkin",
+          "firstName": "Janice",
+          "lastName": "Shulkin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "glenn-shulkin",
+          "firstName": "Glenn",
+          "lastName": "Shulkin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "tania-skylar",
+      "members": [
+        {
+          "id": "tania-skylar",
+          "firstName": "Tania",
+          "lastName": "Skylar",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-tania-skylar",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "linda-spungen-and-glenn-spungen",
+      "members": [
+        {
+          "id": "linda-spungen",
+          "firstName": "Linda",
+          "lastName": "Spungen",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "glenn-spungen",
+          "firstName": "Glenn",
+          "lastName": "Spungen",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "adam-streicher-and-ellen-streicher",
+      "members": [
+        {
+          "id": "adam-streicher",
+          "firstName": "Adam",
+          "lastName": "Streicher",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "ellen-streicher",
+          "firstName": "Ellen",
+          "lastName": "Streicher",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "jane-streicher",
+          "firstName": "Jane",
+          "lastName": "Streicher",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "melanie-sulewski-and-cole-thompson",
+      "members": [
+        {
+          "id": "melanie-sulewski",
+          "firstName": "Melanie",
+          "lastName": "Sulewski",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "cole-thompson",
+          "firstName": "Cole",
+          "lastName": "Thompson",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "mark-temple-and-joan-degennaro",
+      "members": [
+        {
+          "id": "mark-temple",
+          "firstName": "Mark",
+          "lastName": "Temple",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "joan-degennaro",
+          "firstName": "Joan",
+          "lastName": "DeGennaro",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "ana-b-teran",
+      "members": [
+        {
+          "id": "ana-b-teran",
+          "firstName": "Ana B",
+          "lastName": "Teran",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-ana-b-teran",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "robbie-thomashow",
+      "members": [
+        {
+          "id": "robbie-thomashow",
+          "firstName": "Robbie",
+          "lastName": "Thomashow",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "maggie-bennett",
+      "members": [
+        {
+          "id": "maggie-bennett",
+          "firstName": "Maggie",
+          "lastName": "Bennett",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "clemence-theot-and-baptiste-lebecq",
+      "members": [
+        {
+          "id": "clemence-theot",
+          "firstName": "Clémence",
+          "lastName": "Théot",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "baptiste-lebecq",
+          "firstName": "Baptiste",
+          "lastName": "Lebecq",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "billy-tucker",
+      "members": [
+        {
+          "id": "billy-tucker",
+          "firstName": "Billy",
+          "lastName": "Tucker",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-billy-tucker",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "austin-vanbastelaer-and-michael-vanbastelaer",
+      "members": [
+        {
+          "id": "austin-vanbastelaer",
+          "firstName": "Austin",
+          "lastName": "Vanbastelaer",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "michael-vanbastelaer",
+          "firstName": "Michael",
+          "lastName": "Vanbastelaer",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "maddie-vanstone",
+      "members": [
+        {
+          "id": "maddie-vanstone",
+          "firstName": "Maddie",
+          "lastName": "Vanstone",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-maddie-vanstone",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "helena-wang",
+      "members": [
+        {
+          "id": "helena-wang",
+          "firstName": "Helena",
+          "lastName": "Wang",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-helena-wang",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "diane-winogradsky-and-matthieu-benat",
+      "members": [
+        {
+          "id": "diane-winogradsky",
+          "firstName": "Diane",
+          "lastName": "Winogradsky",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        },
+        {
+          "id": "matthieu-benat",
+          "firstName": "Matthieu",
+          "lastName": "Benat",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": false,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": false
+          }
+        }
+      ]
+    },
+    {
+      "partyId": "jacob-yomtoob-and-rachel-korotkin",
+      "members": [
+        {
+          "id": "jacob-yomtoob",
+          "firstName": "Jacob",
+          "lastName": "Yomtoob",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "rachel-korotkin",
+          "firstName": "Rachel",
+          "lastName": "Korotkin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
+    }
+  ]
+}
