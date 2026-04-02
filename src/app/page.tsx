@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { defaultContent, SiteContent } from '@/lib/content'
 
@@ -12,9 +12,21 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.9, ease: 'easeOut' as const, delay },
 })
 
+const flapTransition = {
+  duration: 0.55,
+  repeat: Infinity,
+  repeatType: 'reverse' as const,
+  ease: 'easeInOut' as const,
+}
+
 export default function Home() {
   const [welcomeTitle, setWelcomeTitle] = useState(defaultContent.home_welcome_title)
   const [welcomeBody, setWelcomeBody] = useState(defaultContent.home_welcome_body)
+
+  const { scrollY } = useScroll()
+  // Left butterfly drifts up, right butterfly drifts down
+  const leftY  = useTransform(scrollY, [0, 1500], [0, -260])
+  const rightY = useTransform(scrollY, [0, 1500], [0,  260])
 
   useEffect(() => {
     fetch('/api/content')
@@ -28,6 +40,43 @@ export default function Home() {
 
   return (
     <main>
+
+      {/* ── Butterflies (fixed, home page only) ── */}
+      {/* Left butterfly — drifts up */}
+      <motion.div
+        style={{ y: leftY }}
+        className="fixed top-[38vh] left-[2vw] z-30 pointer-events-none hidden sm:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.82, scaleX: [1, 0.55, 1] }}
+        transition={{
+          opacity: { delay: 1.4, duration: 1 },
+          scaleX: { ...flapTransition, delay: 0.2 },
+        }}
+      >
+        <Image src="/butterfly.png" alt="" width={72} height={72} className="drop-shadow-sm" />
+      </motion.div>
+
+      {/* Right butterfly — drifts down, mirrored */}
+      <motion.div
+        style={{ y: rightY }}
+        className="fixed top-[42vh] right-[2vw] z-30 pointer-events-none hidden sm:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.82, scaleX: [1, 0.55, 1] }}
+        transition={{
+          opacity: { delay: 1.8, duration: 1 },
+          scaleX: { ...flapTransition, delay: 0.5 },
+        }}
+      >
+        <Image
+          src="/butterfly.png"
+          alt=""
+          width={72}
+          height={72}
+          className="drop-shadow-sm"
+          style={{ transform: 'scaleX(-1)' }}
+        />
+      </motion.div>
+
       {/* ── Hero ── */}
       <section
         className="flex flex-col items-center gap-8 px-6 pt-16 pb-0 text-center"
@@ -66,7 +115,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-<motion.div
+          <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
           >
@@ -74,7 +123,7 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Illustration — displayed as content, not background */}
+        {/* Illustration */}
         <motion.div
           className="w-full max-w-2xl"
           initial={{ opacity: 0, y: 16 }}
