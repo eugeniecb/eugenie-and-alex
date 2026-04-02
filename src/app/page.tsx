@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { defaultContent, SiteContent } from '@/lib/content'
 
@@ -16,6 +16,17 @@ export default function Home() {
   const [welcomeTitle, setWelcomeTitle] = useState(defaultContent.home_welcome_title)
   const [welcomeBody, setWelcomeBody] = useState(defaultContent.home_welcome_body)
 
+  const cardRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ['start start', 'end start'],
+  })
+
+  // Illustration rotates open like a greeting card (left-edge hinge)
+  const rotateY = useTransform(scrollYProgress, [0, 0.7], [0, -82])
+  const textOpacity = useTransform(scrollYProgress, [0.25, 0.65], [0, 1])
+  const textY = useTransform(scrollYProgress, [0.25, 0.65], [20, 0])
+
   useEffect(() => {
     fetch('/api/content')
       .then((r) => r.json())
@@ -27,13 +38,10 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
-      {/* ── Hero ── */}
-      <section
-        className="flex flex-col items-center gap-8 px-6 pt-16 pb-0 text-center"
-        style={{ backgroundColor: '#FFF8F0' }}
-      >
-        {/* Text */}
+    <main style={{ backgroundColor: '#FFF8F0' }}>
+
+      {/* ── Title ── */}
+      <section className="flex flex-col items-center gap-8 px-6 pt-16 pb-8 text-center">
         <motion.h1
           className="script text-6xl leading-tight sm:text-7xl md:text-8xl"
           style={{ color: '#722F37' }}
@@ -58,85 +66,78 @@ export default function Home() {
           September 6, 2026 &nbsp;·&nbsp; Paris, France
         </motion.p>
 
-        {/* Scroll indicator */}
         <motion.div
-          className="flex flex-col items-center gap-1"
           style={{ color: '#722F37' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-<motion.div
+          <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
           >
             <ChevronDown size={18} strokeWidth={1.5} />
           </motion.div>
         </motion.div>
-
-        {/* Illustration — displayed as content, not background */}
-        <motion.div
-          className="w-full max-w-2xl"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
-        >
-          <Image
-            src="/hero-illustration.png"
-            alt="Watercolor illustration of Eugénie and Alex at Ledoyen, Paris"
-            width={1000}
-            height={1200}
-            priority
-            className="w-full h-auto"
-          />
-        </motion.div>
       </section>
 
-      {/* ── Welcome ── */}
-      <section
-        className="flex flex-col items-center gap-8 px-6 py-24 text-center"
-        style={{ backgroundColor: '#FFF8F0' }}
-      >
-        <motion.div
-          className="h-px w-16"
-          style={{ backgroundColor: '#C5A258' }}
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-        />
-
-        <motion.h2
-          className="script text-4xl sm:text-5xl"
-          style={{ color: '#722F37' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
+      {/* ── Greeting Card ── */}
+      {/* Outer div provides scroll room; inner sticky div holds the card */}
+      <div ref={cardRef} style={{ height: '280vh' }}>
+        <div
+          className="sticky top-0 flex items-center justify-center"
+          style={{ height: '100vh', backgroundColor: '#FFF8F0' }}
         >
-          {welcomeTitle}
-        </motion.h2>
+          {/* Perspective wrapper — required for 3-D rotateY to appear in depth */}
+          <div
+            className="relative w-full max-w-2xl mx-auto px-6"
+            style={{ perspective: '1400px', perspectiveOrigin: '50% 50%' }}
+          >
+            {/* Inside of card: welcome text revealed as cover rotates away */}
+            <motion.div
+              style={{ opacity: textOpacity, y: textY }}
+              className="flex flex-col items-center gap-8 py-20 text-center"
+            >
+              <div className="h-px w-16" style={{ backgroundColor: '#C5A258' }} />
+              <h2
+                className="script text-4xl sm:text-5xl"
+                style={{ color: '#722F37' }}
+              >
+                {welcomeTitle}
+              </h2>
+              <p
+                className="font-serif text-lg leading-relaxed max-w-lg"
+                style={{ color: '#722F37', opacity: 0.85 }}
+              >
+                {welcomeBody}
+              </p>
+              <div className="h-px w-16" style={{ backgroundColor: '#C5A258' }} />
+            </motion.div>
 
-        <motion.p
-          className="max-w-xl font-serif text-lg leading-relaxed"
-          style={{ color: '#722F37', opacity: 0.85 }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.25 }}
-        >
-          {welcomeBody}
-        </motion.p>
+            {/* Cover: illustration, hinges from its left edge */}
+            <motion.div
+              style={{
+                rotateY,
+                originX: 0,
+                originY: 0.5,
+                position: 'absolute',
+                inset: 0,
+                zIndex: 10,
+                backgroundColor: '#FFF8F0',
+              }}
+            >
+              <Image
+                src="/hero-illustration.png"
+                alt="Watercolor illustration of Eugénie and Alex at Ledoyen, Paris"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
+          </div>
+        </div>
+      </div>
 
-        <motion.div
-          className="h-px w-16"
-          style={{ backgroundColor: '#C5A258' }}
-          initial={{ scaleX: 0, opacity: 0 }}
-          whileInView={{ scaleX: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.35, ease: 'easeOut' }}
-        />
-      </section>
     </main>
   )
 }
