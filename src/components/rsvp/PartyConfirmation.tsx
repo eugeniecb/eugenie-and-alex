@@ -45,8 +45,8 @@ export default function PartyConfirmation({
   }
 
   function saveName(memberId: string) {
-    if (!draftFirst.trim()) {
-      setErrors((e) => ({ ...e, [memberId]: 'First name is required' }))
+    if (!draftFirst.trim() || !draftLast.trim()) {
+      setErrors((e) => ({ ...e, [memberId]: 'First and last name are required' }))
       return
     }
     // If they were previously declined, un-decline when they add a name
@@ -129,7 +129,7 @@ export default function PartyConfirmation({
                       type="text"
                       value={draftLast}
                       onChange={(e) => setDraftLast(e.target.value)}
-                      placeholder="Last name"
+                      placeholder="Last name *"
                       className="flex-1 border-b bg-transparent py-1.5 font-serif text-lg outline-none"
                       style={{ borderColor: '#722F37', color: '#722F37' }}
                     />
