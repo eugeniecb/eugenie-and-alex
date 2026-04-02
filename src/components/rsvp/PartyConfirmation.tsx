@@ -2,36 +2,38 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import type { PartyWithRsvp, NameUpdate } from '@/types/rsvp'
+import type { PartyWithRsvp } from '@/types/rsvp'
 
 interface Props {
   party: PartyWithRsvp
   nameUpdates: Record<string, { newFirstName: string; newLastName: string }>
+  declinedGuests: Set<string>
   onNameUpdatesChange: (updates: Record<string, { newFirstName: string; newLastName: string }>) => void
+  onDeclinedGuestsChange: (declined: Set<string>) => void
   onContinue: () => void
 }
 
-export default function PartyConfirmation({ party, nameUpdates, onNameUpdatesChange, onContinue }: Props) {
+export default function PartyConfirmation({
+  party, nameUpdates, declinedGuests,
+  onNameUpdatesChange, onDeclinedGuestsChange, onContinue,
+}: Props) {
   const [editing, setEditing] = useState<string | null>(null)
   const [draftFirst, setDraftFirst] = useState('')
   const [draftLast, setDraftLast] = useState('')
   const [errors, setErrors] = useState<Record<string, string>>({})
 
-  // Merge DB name updates into our state (on mount, existing updates pre-fill)
+  // Merge DB name updates (pre-fill from prior submission)
   const allUpdates = { ...nameUpdates }
   for (const nu of party.nameUpdates) {
     if (!allUpdates[nu.memberId]) {
-      allUpdates[nu.memberId] = {
-        newFirstName: nu.newFirstName,
-        newLastName: nu.newLastName ?? '',
-      }
+      allUpdates[nu.memberId] = { newFirstName: nu.newFirstName, newLastName: nu.newLastName ?? '' }
     }
   }
 
   function getMemberDisplayName(memberId: string, firstName: string, lastName: string, isUnknown: boolean) {
     const update = allUpdates[memberId]
     if (update) return `${update.newFirstName} ${update.newLastName ?? ''}`.trim()
-    if (isUnknown) return null // needs name
+    if (isUnknown) return null
     return `${firstName} ${lastName}`.trim()
   }
 
@@ -47,27 +49,37 @@ export default function PartyConfirmation({ party, nameUpdates, onNameUpdatesCha
       setErrors((e) => ({ ...e, [memberId]: 'First name is required' }))
       return
     }
-    onNameUpdatesChange({
-      ...allUpdates,
-      [memberId]: { newFirstName: draftFirst.trim(), newLastName: draftLast.trim() },
-    })
+    // If they were previously declined, un-decline when they add a name
+    const newDeclined = new Set(declinedGuests)
+    newDeclined.delete(memberId)
+    onDeclinedGuestsChange(newDeclined)
+    onNameUpdatesChange({ ...allUpdates, [memberId]: { newFirstName: draftFirst.trim(), newLastName: draftLast.trim() } })
     setEditing(null)
     setErrors((e) => { const n = { ...e }; delete n[memberId]; return n })
+  }
+
+  function decline(memberId: string) {
+    const newDeclined = new Set(declinedGuests)
+    newDeclined.add(memberId)
+    onDeclinedGuestsChange(newDeclined)
+    setErrors((e) => { const n = { ...e }; delete n[memberId]; return n })
+  }
+
+  function undecline(memberId: string) {
+    const newDeclined = new Set(declinedGuests)
+    newDeclined.delete(memberId)
+    onDeclinedGuestsChange(newDeclined)
   }
 
   function validate() {
     const newErrors: Record<string, string> = {}
     for (const m of party.members) {
-      if (m.isUnknownGuest && !allUpdates[m.id]) {
-        newErrors[m.id] = 'Please provide this guest\'s name'
+      if (m.isUnknownGuest && !allUpdates[m.id] && !declinedGuests.has(m.id)) {
+        newErrors[m.id] = 'Please add your guest\'s name or indicate you\'re not bringing one'
       }
     }
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
-  }
-
-  function handleContinue() {
-    if (validate()) onContinue()
   }
 
   return (
@@ -86,7 +98,8 @@ export default function PartyConfirmation({ party, nameUpdates, onNameUpdatesCha
       <div className="space-y-3">
         {party.members.map((member, i) => {
           const displayName = getMemberDisplayName(member.id, member.firstName, member.lastName, member.isUnknownGuest)
-          const needsName = member.isUnknownGuest && !allUpdates[member.id]
+          const isDeclined = declinedGuests.has(member.id)
+          const needsDecision = member.isUnknownGuest && !allUpdates[member.id] && !isDeclined
           const isEditing = editing === member.id
 
           return (
@@ -99,6 +112,7 @@ export default function PartyConfirmation({ party, nameUpdates, onNameUpdatesCha
               style={{ borderColor: errors[member.id] ? '#f87171' : '#e8d5c4' }}
             >
               {isEditing ? (
+                /* ── Editing name ── */
                 <div className="space-y-3">
                   <p className="font-serif text-xs text-stone-400 tracking-widest uppercase">Guest name</p>
                   <div className="flex gap-2">
@@ -136,23 +150,50 @@ export default function PartyConfirmation({ party, nameUpdates, onNameUpdatesCha
                     </button>
                   </div>
                 </div>
-              ) : needsName ? (
-                <div className="space-y-2">
+
+              ) : isDeclined ? (
+                /* ── Declined bringing guest ── */
+                <div className="flex items-center justify-between">
+                  <p className="font-serif text-sm italic" style={{ color: '#722F37', opacity: 0.55 }}>
+                    Not bringing a guest
+                  </p>
+                  <button
+                    onClick={() => undecline(member.id)}
+                    className="font-serif text-xs text-stone-400 hover:text-stone-600 underline underline-offset-2"
+                  >
+                    Undo
+                  </button>
+                </div>
+
+              ) : needsDecision ? (
+                /* ── Unknown guest, needs decision ── */
+                <div className="space-y-3">
                   <p className="font-serif text-sm" style={{ color: '#722F37', opacity: 0.65 }}>
                     You have a guest whose name we don&rsquo;t have yet.
                   </p>
-                  <button
-                    onClick={() => startEditing(member.id)}
-                    className="font-serif text-xs tracking-widest uppercase border px-4 py-1.5 transition-colors hover:bg-stone-50"
-                    style={{ borderColor: '#722F37', color: '#722F37' }}
-                  >
-                    Add guest name
-                  </button>
+                  <div className="flex gap-2 flex-wrap">
+                    <button
+                      onClick={() => startEditing(member.id)}
+                      className="font-serif text-xs tracking-widest uppercase border px-4 py-2 transition-colors hover:bg-stone-50"
+                      style={{ borderColor: '#722F37', color: '#722F37' }}
+                    >
+                      Add guest name
+                    </button>
+                    <button
+                      onClick={() => decline(member.id)}
+                      className="font-serif text-xs tracking-widest uppercase border px-4 py-2 transition-colors hover:bg-stone-50"
+                      style={{ borderColor: '#e8d5c4', color: '#9c7b7b' }}
+                    >
+                      Not bringing a guest
+                    </button>
+                  </div>
                   {errors[member.id] && (
                     <p className="font-serif text-xs text-red-400">{errors[member.id]}</p>
                   )}
                 </div>
+
               ) : (
+                /* ── Named member ── */
                 <div className="flex items-center justify-between">
                   <p className="font-serif text-base" style={{ color: '#722F37' }}>{displayName}</p>
                   {member.isUnknownGuest && (
@@ -171,7 +212,7 @@ export default function PartyConfirmation({ party, nameUpdates, onNameUpdatesCha
       </div>
 
       <button
-        onClick={handleContinue}
+        onClick={() => { if (validate()) onContinue() }}
         className="w-full border py-4 font-serif text-sm tracking-widest uppercase transition-colors hover:bg-white mt-2"
         style={{ borderColor: '#722F37', color: '#722F37' }}
       >

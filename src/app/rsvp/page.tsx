@@ -48,6 +48,7 @@ export default function RsvpPage() {
   const [step, setStep] = useState<Step>(1)
   const [party, setParty] = useState<PartyWithRsvp | null>(null)
   const [nameUpdates, setNameUpdates] = useState<Record<string, { newFirstName: string; newLastName: string }>>({})
+  const [declinedGuests, setDeclinedGuests] = useState<Set<string>>(new Set())
   const [responses, setResponses] = useState<Record<string, MemberResponse>>({})
   const [loadingParty, setLoadingParty] = useState(false)
   const [loadError, setLoadError] = useState<string | null>(null)
@@ -80,7 +81,6 @@ export default function RsvpPage() {
 
   function handleNameUpdatesChange(updates: Record<string, { newFirstName: string; newLastName: string }>) {
     setNameUpdates(updates)
-    // Sync names into responses
     if (party) {
       setResponses((prev) => {
         const next = { ...prev }
@@ -92,6 +92,38 @@ export default function RsvpPage() {
         return next
       })
     }
+  }
+
+  function handleDeclinedGuestsChange(declined: Set<string>) {
+    setDeclinedGuests(declined)
+    // Mark all events as not attending for declined guests
+    setResponses((prev) => {
+      const next = { ...prev }
+      for (const memberId of declined) {
+        if (next[memberId]) {
+          next[memberId] = {
+            ...next[memberId],
+            attendingWelcomeParty: false,
+            attendingCeremony: false,
+            attendingReception: false,
+            attendingFarewellBrunch: false,
+          }
+        }
+      }
+      // If a guest was un-declined, reset their responses to null so they fill them in
+      for (const memberId of Object.keys(next)) {
+        if (!declined.has(memberId) && declinedGuests.has(memberId)) {
+          next[memberId] = {
+            ...next[memberId],
+            attendingWelcomeParty: null,
+            attendingCeremony: null,
+            attendingReception: null,
+            attendingFarewellBrunch: null,
+          }
+        }
+      }
+      return next
+    })
   }
 
   function handleStep2Continue() {
@@ -211,7 +243,9 @@ export default function RsvpPage() {
               <PartyConfirmation
                 party={party}
                 nameUpdates={nameUpdates}
+                declinedGuests={declinedGuests}
                 onNameUpdatesChange={handleNameUpdatesChange}
+                onDeclinedGuestsChange={handleDeclinedGuestsChange}
                 onContinue={handleStep2Continue}
               />
             </motion.div>
@@ -229,6 +263,7 @@ export default function RsvpPage() {
               <EventAttendance
                 party={party}
                 nameUpdates={nameUpdates}
+                declinedGuests={declinedGuests}
                 responses={responses}
                 onResponsesChange={setResponses}
                 onBack={() => setStep(2)}

@@ -8,6 +8,7 @@ import type { PartyWithRsvp, MemberResponse, EventKey } from '@/types/rsvp'
 interface Props {
   party: PartyWithRsvp
   nameUpdates: Record<string, { newFirstName: string; newLastName: string }>
+  declinedGuests: Set<string>
   responses: Record<string, MemberResponse>
   onResponsesChange: (responses: Record<string, MemberResponse>) => void
   onBack: () => void
@@ -16,7 +17,7 @@ interface Props {
 
 const EVENT_ORDER: EventKey[] = ['welcomeParty', 'ceremony', 'reception', 'farewellBrunch']
 
-export default function EventAttendance({ party, nameUpdates, responses, onResponsesChange, onBack, onContinue }: Props) {
+export default function EventAttendance({ party, nameUpdates, declinedGuests, responses, onResponsesChange, onBack, onContinue }: Props) {
 
   function getMemberName(memberId: string, firstName: string, lastName: string) {
     const update = nameUpdates[memberId]
@@ -62,9 +63,11 @@ export default function EventAttendance({ party, nameUpdates, responses, onRespo
     }
   }
 
+  const activeMembers = party.members.filter((m) => !declinedGuests.has(m.id))
+
   return (
     <div className="flex flex-col gap-8 w-full max-w-2xl mx-auto">
-      {party.members.map((member, mi) => {
+      {activeMembers.map((member, mi) => {
         const r = responses[member.id]
         const name = getMemberName(member.id, member.firstName, member.lastName)
         const invitedEvents = EVENT_ORDER.filter((k) => member.events[k])
