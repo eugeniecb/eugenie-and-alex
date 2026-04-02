@@ -185,8 +185,8 @@ export default function Home() {
             <Image src={LAYERS.foliage} alt="" fill style={{ objectFit: 'cover' }} sizes="(max-width: 672px) 100vw, 672px" priority />
           </motion.div>
 
-          {/* Layer 4: Ground */}
-          <motion.div style={{ y: groundY, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, willChange: 'transform' }}>
+          {/* Layer 4: Ground — static, no parallax */}
+          <motion.div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
             <Image src={LAYERS.ground} alt="" fill style={{ objectFit: 'cover' }} sizes="(max-width: 672px) 100vw, 672px" priority />
           </motion.div>
 
