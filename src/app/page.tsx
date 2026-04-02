@@ -42,39 +42,49 @@ export default function Home() {
     <main>
 
       {/* ── Butterflies (fixed, home page only) ── */}
-      {/* Left butterfly — drifts up */}
+
+      {/* Left pink — drifts up */}
       <motion.div
         style={{ y: leftY }}
-        className="fixed top-[38vh] left-[2vw] z-30 pointer-events-none hidden sm:block"
+        className="fixed top-[36vh] left-[12vw] z-30 pointer-events-none hidden sm:block"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.82, scaleX: [1, 0.55, 1] }}
-        transition={{
-          opacity: { delay: 1.4, duration: 1 },
-          scaleX: { ...flapTransition, delay: 0.2 },
-        }}
+        animate={{ opacity: 0.85, scaleX: [1, 0.5, 1] }}
+        transition={{ opacity: { delay: 1.4, duration: 1 }, scaleX: { ...flapTransition, delay: 0.2 } }}
       >
-        <Image src="/butterfly.png" alt="" width={72} height={72} className="drop-shadow-sm" />
+        <Image src="/butterfly.png" alt="" width={56} height={56} className="drop-shadow-sm" />
       </motion.div>
 
-      {/* Right butterfly — drifts down, mirrored */}
+      {/* Left blue — drifts up slightly slower, offset below pink */}
+      <motion.div
+        style={{ y: leftY }}
+        className="fixed top-[44vh] left-[10vw] z-30 pointer-events-none hidden sm:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.85, scaleX: [1, 0.5, 1] }}
+        transition={{ opacity: { delay: 1.7, duration: 1 }, scaleX: { ...flapTransition, delay: 0.55 } }}
+      >
+        <Image src="/butterfly-blue.png" alt="" width={48} height={48} className="drop-shadow-sm" />
+      </motion.div>
+
+      {/* Right pink — drifts down, mirrored */}
       <motion.div
         style={{ y: rightY }}
-        className="fixed top-[42vh] right-[2vw] z-30 pointer-events-none hidden sm:block"
+        className="fixed top-[40vh] right-[12vw] z-30 pointer-events-none hidden sm:block"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.82, scaleX: [1, 0.55, 1] }}
-        transition={{
-          opacity: { delay: 1.8, duration: 1 },
-          scaleX: { ...flapTransition, delay: 0.5 },
-        }}
+        animate={{ opacity: 0.85, scaleX: [1, 0.5, 1] }}
+        transition={{ opacity: { delay: 1.8, duration: 1 }, scaleX: { ...flapTransition, delay: 0.35 } }}
       >
-        <Image
-          src="/butterfly.png"
-          alt=""
-          width={72}
-          height={72}
-          className="drop-shadow-sm"
-          style={{ transform: 'scaleX(-1)' }}
-        />
+        <Image src="/butterfly.png" alt="" width={56} height={56} className="drop-shadow-sm" style={{ transform: 'scaleX(-1)' }} />
+      </motion.div>
+
+      {/* Right blue — drifts down, offset below pink */}
+      <motion.div
+        style={{ y: rightY }}
+        className="fixed top-[48vh] right-[10vw] z-30 pointer-events-none hidden sm:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.85, scaleX: [1, 0.5, 1] }}
+        transition={{ opacity: { delay: 2.1, duration: 1 }, scaleX: { ...flapTransition, delay: 0.7 } }}
+      >
+        <Image src="/butterfly-blue.png" alt="" width={48} height={48} className="drop-shadow-sm" style={{ transform: 'scaleX(-1)' }} />
       </motion.div>
 
       {/* ── Hero ── */}
