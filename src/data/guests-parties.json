@@ -753,9 +753,9 @@
       "partyId": "graham-johnson-and-sydney-goldberg",
       "members": [
         {
-          "id": "graham-johnson",
-          "firstName": "Graham",
-          "lastName": "Johnson",
+          "id": "sydney-goldberg",
+          "firstName": "Sydney",
+          "lastName": "Goldberg",
           "isUnknownGuest": false,
           "events": {
             "welcomeParty": true,
@@ -765,9 +765,9 @@
           }
         },
         {
-          "id": "sydney-goldberg",
-          "firstName": "Sydney",
-          "lastName": "Goldberg",
+          "id": "graham-johnson",
+          "firstName": "Graham",
+          "lastName": "Johnson",
           "isUnknownGuest": false,
           "events": {
             "welcomeParty": true,
