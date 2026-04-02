@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, FormEvent } from 'react'
-import { LogOut, RefreshCw, AlertCircle } from 'lucide-react'
+import { LogOut, RefreshCw, AlertCircle, Download } from 'lucide-react'
 
 const ADMIN_SESSION_KEY = 'admin_token'
 
@@ -97,6 +97,32 @@ export default function AdminRsvpsPage() {
     setToken(null)
   }
 
+  function downloadCsv() {
+    const header = ['Party', 'First Name', 'Last Name', 'Welcome Party', 'Ceremony', 'Reception', 'Farewell Brunch', 'Dietary Restrictions']
+    const escape = (v: string) => `"${v.replace(/"/g, '""')}"`
+    const bool = (v: boolean | null) => v === null ? '' : v ? 'Yes' : 'No'
+    const rows = parties.flatMap((party) =>
+      party.members.map((m) => [
+        escape(party.displayName),
+        escape(m.firstName),
+        escape(m.lastName),
+        bool(m.attendingWelcomeParty),
+        bool(m.attendingCeremony),
+        bool(m.attendingReception),
+        bool(m.attendingFarewellBrunch),
+        escape(m.dietaryRestrictions),
+      ].join(','))
+    )
+    const csv = [header.join(','), ...rows].join('\n')
+    const blob = new Blob([csv], { type: 'text/csv' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `rsvps-${new Date().toISOString().slice(0, 10)}.csv`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   const displayed = filter === 'dietary'
     ? parties.filter((p) => p.members.some((m) => m.dietaryRestrictions))
     : parties
@@ -153,6 +179,14 @@ export default function AdminRsvpsPage() {
           >
             <RefreshCw size={13} className={loading ? 'animate-spin' : ''} />
             Refresh
+          </button>
+          <button
+            onClick={downloadCsv}
+            disabled={parties.length === 0}
+            className="flex items-center gap-2 px-4 py-2 font-serif text-sm border border-stone-200 text-stone-500 hover:bg-stone-50 disabled:opacity-40"
+          >
+            <Download size={13} />
+            Download CSV
           </button>
           <a
             href="/admin"
