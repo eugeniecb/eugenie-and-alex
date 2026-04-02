@@ -109,7 +109,7 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
                         <p className="font-serif text-xl font-semibold" style={{ color: '#722F37' }}>
                           {event.name}
                         </p>
-                        <p className="font-serif text-base" style={{ color: '#722F37', opacity: 0.65 }}>
+                        <p className="font-serif text-lg" style={{ color: '#722F37', opacity: 0.8 }}>
                           {event.date} · {event.time}
                         </p>
                         {isReceptionLinked && (
