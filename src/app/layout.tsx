@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Great_Vibes } from "next/font/google";
+import { Cormorant_Garamond, Pinyon_Script } from "next/font/google";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import PasswordGate from "@/components/PasswordGate";
@@ -11,7 +11,7 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600"],
 });
 
-const greatVibes = Great_Vibes({
+const pinyonScript = Pinyon_Script({
   variable: "--font-great-vibes",
   subsets: ["latin"],
   weight: "400",
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${greatVibes.variable} h-full antialiased`}>
+    <html lang="en" className={`${cormorant.variable} ${pinyonScript.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-serif">
         <PasswordGate>
           {/* Garland top-left */}
