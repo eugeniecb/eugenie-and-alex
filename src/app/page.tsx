@@ -9,7 +9,7 @@ import { defaultContent, SiteContent } from '@/lib/content'
 const CLD = 'https://res.cloudinary.com/dl7hw5hs5/image/upload/f_auto,q_auto'
 const LAYERS = {
   sky:      `${CLD}/v1775141596/sky_t7wj9z.png`,
-  building: `${CLD}/v1775141591/building_njrcwv.png`,
+  building: `${CLD}/v1775143679/building-2_bafpak.png`,
   foliage:  `${CLD}/v1775141593/fruits_nigqpr.png`,
   ground:   `${CLD}/v1775141595/ground_fbq1kp.png`,
   couple:   `${CLD}/v1775141592/couple_cykuvj.png`,
