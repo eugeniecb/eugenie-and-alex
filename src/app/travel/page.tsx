@@ -43,7 +43,7 @@ export default function TravelPage() {
       <section className="flex flex-col items-center gap-4 px-6 pt-16 pb-10 text-center">
         <Divider />
         <motion.h1 className="script text-5xl sm:text-6xl" style={{ color: '#722F37' }} {...fadeUp(0.1)}>
-          Travel &amp; Lodging
+          Travel and Lodging
         </motion.h1>
         <motion.p
           className="max-w-lg font-serif text-base sm:text-lg leading-relaxed"
