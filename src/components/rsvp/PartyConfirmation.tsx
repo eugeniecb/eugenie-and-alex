@@ -169,7 +169,7 @@ export default function PartyConfirmation({
                 /* ── Unknown guest, needs decision ── */
                 <div className="space-y-3">
                   <p className="font-serif text-lg" style={{ color: '#722F37', opacity: 0.65 }}>
-                    You have a guest whose name we don&rsquo;t have yet.
+                    Will you be joining us with a guest? If so, please share their name below.
                   </p>
                   <div className="flex gap-2 flex-wrap">
                     <button
