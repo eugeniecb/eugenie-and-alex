@@ -256,6 +256,12 @@ export default function AdminPage() {
             <Save size={14} />
             {saving ? 'Saving…' : 'Save changes'}
           </button>
+          <a
+            href="/admin/rsvps"
+            className="font-serif text-sm border border-stone-200 px-4 py-2 text-stone-500 hover:bg-stone-50"
+          >
+            RSVP review
+          </a>
           <button
             onClick={logout}
             className="flex items-center gap-2 px-4 py-2 font-serif text-sm border border-stone-300 text-stone-500 hover:bg-stone-50 transition-colors"
