@@ -83,7 +83,7 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
             style={{ borderColor: '#e8d5c4' }}
           >
             <div className="px-6 py-4 border-b" style={{ borderColor: '#e8d5c4', backgroundColor: '#fffaf6' }}>
-              <p className="font-serif text-lg" style={{ color: '#722F37' }}>{name}</p>
+              <p className="font-serif text-xl" style={{ color: '#722F37' }}>{name}</p>
             </div>
             <div className="px-6 py-5 space-y-3">
               {invitedEvents.map((eventKey) => {
@@ -92,13 +92,13 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
                 return (
                   <div key={eventKey} className="flex items-center justify-between gap-4">
                     <div>
-                      <p className="font-serif text-base" style={{ color: '#722F37' }}>{event.name}</p>
-                      <p className="font-serif text-sm" style={{ color: '#722F37', opacity: 0.55 }}>
+                      <p className="font-serif text-lg" style={{ color: '#722F37' }}>{event.name}</p>
+                      <p className="font-serif text-base" style={{ color: '#722F37', opacity: 0.55 }}>
                         {event.date}
                       </p>
                     </div>
                     <span
-                      className="font-serif text-sm tracking-wide whitespace-nowrap"
+                      className="font-serif text-base tracking-wide whitespace-nowrap"
                       style={{ color: attending ? '#C5A258' : '#9ca3af' }}
                     >
                       {attending ? 'Attending' : 'Not attending'}
@@ -108,8 +108,8 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
               })}
               {r.dietaryRestrictions && (
                 <div className="pt-2 border-t" style={{ borderColor: '#f0e6d9' }}>
-                  <p className="font-serif text-sm text-stone-600 tracking-widest uppercase mb-1">Dietary notes</p>
-                  <p className="font-serif text-base" style={{ color: '#722F37', opacity: 0.8 }}>
+                  <p className="font-serif text-base text-stone-600 tracking-widest uppercase mb-1">Dietary notes</p>
+                  <p className="font-serif text-lg" style={{ color: '#722F37', opacity: 0.8 }}>
                     {r.dietaryRestrictions}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="rounded border px-5 py-3 font-serif text-sm text-center"
+          className="rounded border px-5 py-3 font-serif text-base text-center"
           style={{ borderColor: '#f87171', color: '#ef4444', backgroundColor: '#fff5f5' }}
         >
           {error}
@@ -142,7 +142,7 @@ export default function ReviewAndConfirm({ party, nameUpdates, responses, onBack
         <button
           onClick={handleSubmit}
           disabled={submitting}
-          className="flex-[2] border py-3.5 font-serif text-sm tracking-widest uppercase transition-colors hover:bg-white disabled:opacity-40"
+          className="flex-[2] border py-3.5 font-serif text-base tracking-widest uppercase transition-colors hover:bg-white disabled:opacity-40"
           style={{ borderColor: '#722F37', color: '#722F37' }}
         >
           {submitting ? 'Submitting…' : 'Submit RSVP'}

@@ -88,7 +88,7 @@ export default function PartyConfirmation({
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded border px-5 py-3 font-serif text-sm text-center leading-relaxed"
+          className="rounded border px-5 py-3 font-serif text-base text-center leading-relaxed"
           style={{ borderColor: '#C5A258', color: '#722F37', backgroundColor: '#fffbf0' }}
         >
           It looks like your party has already responded. You can review and update your RSVP below.
@@ -114,7 +114,7 @@ export default function PartyConfirmation({
               {isEditing ? (
                 /* ── Editing name ── */
                 <div className="space-y-3">
-                  <p className="font-serif text-sm text-stone-600 tracking-widest uppercase">Guest name</p>
+                  <p className="font-serif text-base text-stone-600 tracking-widest uppercase">Guest name</p>
                   <div className="flex gap-2">
                     <input
                       type="text"
@@ -122,7 +122,7 @@ export default function PartyConfirmation({
                       onChange={(e) => setDraftFirst(e.target.value)}
                       placeholder="First name *"
                       autoFocus
-                      className="flex-1 border-b bg-transparent py-1.5 font-serif text-base outline-none"
+                      className="flex-1 border-b bg-transparent py-1.5 font-serif text-lg outline-none"
                       style={{ borderColor: '#722F37', color: '#722F37' }}
                     />
                     <input
@@ -130,21 +130,21 @@ export default function PartyConfirmation({
                       value={draftLast}
                       onChange={(e) => setDraftLast(e.target.value)}
                       placeholder="Last name"
-                      className="flex-1 border-b bg-transparent py-1.5 font-serif text-base outline-none"
+                      className="flex-1 border-b bg-transparent py-1.5 font-serif text-lg outline-none"
                       style={{ borderColor: '#722F37', color: '#722F37' }}
                     />
                   </div>
                   <div className="flex gap-2 pt-1">
                     <button
                       onClick={() => saveName(member.id)}
-                      className="font-serif text-xs tracking-widest uppercase border px-4 py-1.5 transition-colors hover:bg-stone-50"
+                      className="font-serif text-sm tracking-widest uppercase border px-4 py-1.5 transition-colors hover:bg-stone-50"
                       style={{ borderColor: '#722F37', color: '#722F37' }}
                     >
                       Save
                     </button>
                     <button
                       onClick={() => setEditing(null)}
-                      className="font-serif text-xs tracking-widest uppercase text-stone-400 hover:text-stone-600"
+                      className="font-serif text-sm tracking-widest uppercase text-stone-400 hover:text-stone-600"
                     >
                       Cancel
                     </button>
@@ -154,12 +154,12 @@ export default function PartyConfirmation({
               ) : isDeclined ? (
                 /* ── Declined bringing guest ── */
                 <div className="flex items-center justify-between">
-                  <p className="font-serif text-base italic" style={{ color: '#722F37', opacity: 0.55 }}>
+                  <p className="font-serif text-lg italic" style={{ color: '#722F37', opacity: 0.55 }}>
                     Not bringing a guest
                   </p>
                   <button
                     onClick={() => undecline(member.id)}
-                    className="font-serif text-xs text-stone-400 hover:text-stone-600 underline underline-offset-2"
+                    className="font-serif text-sm text-stone-400 hover:text-stone-600 underline underline-offset-2"
                   >
                     Undo
                   </button>
@@ -168,7 +168,7 @@ export default function PartyConfirmation({
               ) : needsDecision ? (
                 /* ── Unknown guest, needs decision ── */
                 <div className="space-y-3">
-                  <p className="font-serif text-base" style={{ color: '#722F37', opacity: 0.65 }}>
+                  <p className="font-serif text-lg" style={{ color: '#722F37', opacity: 0.65 }}>
                     You have a guest whose name we don&rsquo;t have yet.
                   </p>
                   <div className="flex gap-2 flex-wrap">
@@ -195,11 +195,11 @@ export default function PartyConfirmation({
               ) : (
                 /* ── Named member ── */
                 <div className="flex items-center justify-between">
-                  <p className="font-serif text-lg" style={{ color: '#722F37' }}>{displayName}</p>
+                  <p className="font-serif text-xl" style={{ color: '#722F37' }}>{displayName}</p>
                   {member.isUnknownGuest && (
                     <button
                       onClick={() => startEditing(member.id)}
-                      className="font-serif text-xs text-stone-400 hover:text-stone-600 underline underline-offset-2"
+                      className="font-serif text-sm text-stone-400 hover:text-stone-600 underline underline-offset-2"
                     >
                       Edit
                     </button>
