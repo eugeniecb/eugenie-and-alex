@@ -44,7 +44,7 @@ export default function RsvpSuccess({ firstName }: { firstName: string }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.5 }}
       >
-        Thank you! We can&rsquo;t wait to celebrate with you in Paris.
+        We can&rsquo;t wait to celebrate with you in Paris.
       </motion.p>
 
       <motion.p
