@@ -56,7 +56,7 @@ export default function RsvpPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Kindly reply by <span className="font-semibold">June 1, 2026</span>.
+          Kindly reply by <span className="font-semibold">July 15, 2026</span>.
         </motion.p>
 
         <motion.div
