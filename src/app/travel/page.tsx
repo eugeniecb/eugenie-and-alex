@@ -56,8 +56,8 @@ export default function TravelPage() {
       </section>
 
       {/* ── Where to Stay ── */}
-      <section className="mx-auto max-w-3xl px-6 py-12">
-        <div className="flex flex-col items-center gap-10">
+      <section className="mx-auto max-w-3xl px-6 pt-4 pb-12">
+        <div className="flex flex-col items-center gap-4">
           <motion.div {...fadeUp(0)}>
             <MapPin size={28} strokeWidth={1.2} style={{ color: '#C5A258' }} className="mx-auto" />
           </motion.div>
