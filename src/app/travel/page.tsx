@@ -78,7 +78,7 @@ export default function TravelPage() {
                 name: 'Hôtel Perpetual',
                 description: 'To book, please email contact@perpetual.paris and mention you are reaching out for Eugénie and Alex\'s wedding.',
                 email: 'contact@perpetual.paris',
-                href: 'https://perpetual.paris',
+                href: 'https://hotelperpetual.paris',
               },
               {
                 type: 'House or Rental',
