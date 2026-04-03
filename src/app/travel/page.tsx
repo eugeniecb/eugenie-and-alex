@@ -187,7 +187,7 @@ export default function TravelPage() {
               {
                 icon: '🚕',
                 title: 'Taxi & Rideshare',
-                body: 'Taxis are metered and plentiful. Uber, Bolt, and the French app Heetch all operate in Paris. Expect short rides within the 8th to cost €8–15.',
+                body: 'Taxis are metered and plentiful, easily ordered via the Taxi G7 app. Uber and Bolt also operate in Paris. Expect short rides within the 8th to cost €8–15.',
               },
               {
                 icon: '🚶',
