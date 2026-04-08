@@ -243,9 +243,14 @@ export default function GalleryPage() {
                 key={selected}
                 className="relative flex flex-col items-center max-h-[90vh] max-w-[90vw] sm:max-w-3xl"
                 custom={directionRef.current}
-                initial={(dir: number) => ({ x: dir * 60, opacity: 0, scale: 0.95 })}
-                animate={{ x: 0, opacity: 1, scale: 1 }}
-                exit={(dir: number) => ({ x: dir * -60, opacity: 0, scale: 0.95 })}
+                variants={{
+                  enter: (dir: number) => ({ x: dir * 60, opacity: 0, scale: 0.95 }),
+                  center: { x: 0, opacity: 1, scale: 1 },
+                  exit: (dir: number) => ({ x: dir * -60, opacity: 0, scale: 0.95 }),
+                }}
+                initial="enter"
+                animate="center"
+                exit="exit"
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 onClick={(e) => e.stopPropagation()}
               >
