@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Search } from 'lucide-react'
 import guestData from '@/data/guests.json'
 import { defaultContent, EventItem, GuestTier } from '@/lib/content'
+import { normalize } from '@/lib/search'
 
 type Tier = GuestTier
 interface Guest { name: string; tier: Tier; searchTerms: string[] }
@@ -13,9 +14,9 @@ const SESSION_KEY = 'wedding_guest'
 const guests = guestData.guests as Guest[]
 
 function match(query: string, guest: Guest): boolean {
-  const q = query.toLowerCase().trim()
+  const q = normalize(query)
   if (!q) return false
-  return guest.searchTerms.some((term) => term.includes(q))
+  return guest.searchTerms.some((term) => normalize(term).includes(q))
 }
 
 // ── Sub-components ──────────────────────────────────────────────────────────
