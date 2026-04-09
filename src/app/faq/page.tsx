@@ -32,7 +32,7 @@ export default function FaqPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          FAQ
+          Frequently Asked Questions
         </motion.h1>
         <motion.div
           className="mx-auto h-px w-16"
