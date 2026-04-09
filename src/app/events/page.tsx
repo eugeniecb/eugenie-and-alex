@@ -16,7 +16,10 @@ const guests = guestData.guests as Guest[]
 function match(query: string, guest: Guest): boolean {
   const q = normalize(query)
   if (!q) return false
-  return guest.searchTerms.some((term) => normalize(term).includes(q))
+  const terms = guest.searchTerms.map(normalize)
+  // Every word the user typed must be a prefix of at least one search term
+  const words = q.split(/\s+/)
+  return words.every((w) => terms.some((t) => t.startsWith(w)))
 }
 
 // ── Sub-components ──────────────────────────────────────────────────────────
