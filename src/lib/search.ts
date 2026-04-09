@@ -52,13 +52,17 @@ export function partyDisplayName(
   return `${names.slice(0, -1).join(', ')} & ${names[names.length - 1]}`
 }
 
-/** Greeting name: first known member's first name */
+/** Greeting name: all known members' first names joined with & */
 export function partyGreetingName(
   party: Party,
   nameUpdates: Record<string, { newFirstName: string; newLastName: string | null }> = {}
 ): string {
-  const firstKnown = party.members.find((m) => !m.isUnknownGuest)
-  if (!firstKnown) return 'Guest'
-  const update = nameUpdates[firstKnown.id]
-  return update ? update.newFirstName : firstKnown.firstName
+  const knownMembers = party.members.filter((m) => !m.isUnknownGuest)
+  if (knownMembers.length === 0) return 'Guest'
+  const names = knownMembers.map((m) => {
+    const update = nameUpdates[m.id]
+    return update ? update.newFirstName : m.firstName
+  })
+  if (names.length === 1) return names[0]
+  return `${names.slice(0, -1).join(', ')} & ${names[names.length - 1]}`
 }
