@@ -12,13 +12,13 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    setUnlocked(sessionStorage.getItem(SESSION_KEY) === 'true')
+    setUnlocked(localStorage.getItem(SESSION_KEY) === 'true')
   }, [])
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
     if (input === process.env.NEXT_PUBLIC_SITE_PASSWORD) {
-      sessionStorage.setItem(SESSION_KEY, 'true')
+      localStorage.setItem(SESSION_KEY, 'true')
       setUnlocked(true)
     } else {
       setError(true)
@@ -29,7 +29,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
   // Admin has its own auth — bypass guest password gate
   if (pathname.startsWith('/admin')) return <>{children}</>
 
-  // Avoid flash before sessionStorage is read
+  // Avoid flash before localStorage is read
   if (unlocked === null) return null
 
   if (unlocked) return <>{children}</>
