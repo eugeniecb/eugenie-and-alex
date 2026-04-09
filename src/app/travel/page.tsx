@@ -127,6 +127,34 @@ export default function TravelPage() {
         </div>
       </section>
 
+      {/* ── Things to Do ── */}
+      <section className="mx-auto max-w-3xl px-6 py-12">
+        <div className="flex flex-col items-center gap-6">
+          <motion.div {...fadeUp(0)}>
+            <MapPin size={28} strokeWidth={1.2} style={{ color: '#C5A258' }} className="mx-auto" />
+          </motion.div>
+          <SectionTitle>Things to Do</SectionTitle>
+          <motion.p
+            className="font-serif text-center text-base leading-relaxed"
+            style={{ color: '#722F37', opacity: 0.8 }}
+            {...fadeUp(0.05)}
+          >
+            A few of our favorite spots in Paris to explore before or after the wedding weekend.
+          </motion.p>
+          <motion.div className="w-full rounded-lg overflow-hidden border" style={{ borderColor: '#e8d5c4' }} {...fadeUp(0.1)}>
+            <iframe
+              src="https://www.google.com/maps/d/embed?mid=1aujsarzQx_QMEAYNXUPwT2VBAIZQndY"
+              width="100%"
+              height="480"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Getting to Paris ── */}
       <section className="mx-auto max-w-3xl px-6 py-12">
         <div className="flex flex-col items-center gap-6">
@@ -210,33 +238,6 @@ export default function TravelPage() {
         </div>
       </section>
 
-      {/* ── Things to Do ── */}
-      <section className="mx-auto max-w-3xl px-6 py-12 pb-20">
-        <div className="flex flex-col items-center gap-6">
-          <motion.div {...fadeUp(0)}>
-            <MapPin size={28} strokeWidth={1.2} style={{ color: '#C5A258' }} className="mx-auto" />
-          </motion.div>
-          <SectionTitle>Things to Do</SectionTitle>
-          <motion.p
-            className="font-serif text-center text-base leading-relaxed"
-            style={{ color: '#722F37', opacity: 0.8 }}
-            {...fadeUp(0.05)}
-          >
-            A few of our favorite spots in Paris to explore before or after the wedding weekend.
-          </motion.p>
-          <motion.div className="w-full rounded-lg overflow-hidden border" style={{ borderColor: '#e8d5c4' }} {...fadeUp(0.1)}>
-            <iframe
-              src="https://www.google.com/maps/d/embed?mid=1aujsarzQx_QMEAYNXUPwT2VBAIZQndY"
-              width="100%"
-              height="480"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </motion.div>
-        </div>
-      </section>
 
     </main>
   )
