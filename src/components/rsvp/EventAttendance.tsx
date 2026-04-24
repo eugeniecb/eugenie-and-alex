@@ -29,11 +29,6 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
     const current = responses[memberId]
     const updated = { ...current, [field]: value }
 
-    // Link ceremony ↔ reception
-    if (field === 'attendingCeremony') {
-      updated.attendingReception = value as boolean | null
-    }
-
     onResponsesChange({ ...responses, [memberId]: updated })
   }
 
@@ -100,7 +95,6 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
                 }
                 const field = fieldMap[eventKey]
                 const value = r[field] as boolean | null
-                const isReceptionLinked = eventKey === 'reception'
 
                 return (
                   <div key={eventKey} className="space-y-2">
@@ -112,23 +106,12 @@ export default function EventAttendance({ party, nameUpdates, declinedGuests, re
                         <p className="font-serif text-lg" style={{ color: '#722F37', opacity: 0.8 }}>
                           {event.date} · {event.time}
                         </p>
-                        {isReceptionLinked && (
-                          <p className="font-serif text-base italic mt-0.5" style={{ color: '#C5A258' }}>
-                            The reception immediately follows the ceremony
-                          </p>
-                        )}
                       </div>
                     </div>
                     <EventToggle
                       value={value}
                       onChange={(v) => updateResponse(member.id, field, v)}
-                      disabled={isReceptionLinked}
                     />
-                    {isReceptionLinked && (
-                      <p className="font-serif text-base" style={{ color: '#9ca3af' }}>
-                        Set automatically based on your ceremony response
-                      </p>
-                    )}
                   </div>
                 )
               })}
