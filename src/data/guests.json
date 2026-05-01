@@ -1579,6 +1579,26 @@
         "rachel",
         "rachel korotkin"
       ]
+    },
+    {
+      "name": "Sabrina Alvarez-Correa",
+      "tier": "full-weekend",
+      "searchTerms": [
+        "alvarez-correa",
+        "sabrina",
+        "sabrina alvarez-correa",
+        "alvarez",
+        "correa"
+      ]
+    },
+    {
+      "name": "Adam King",
+      "tier": "full-weekend",
+      "searchTerms": [
+        "king",
+        "adam",
+        "adam king"
+      ]
     }
   ]
 }

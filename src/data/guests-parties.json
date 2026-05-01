@@ -2751,6 +2751,35 @@
           }
         }
       ]
+    },
+    {
+      "partyId": "sabrina-alvarez-correa-and-adam-king",
+      "members": [
+        {
+          "id": "sabrina-alvarez-correa",
+          "firstName": "Sabrina",
+          "lastName": "Alvarez-Correa",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "adam-king",
+          "firstName": "Adam",
+          "lastName": "King",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
     }
   ]
 }
