@@ -1536,10 +1536,10 @@
           "lastName": "Laffargue",
           "isUnknownGuest": false,
           "events": {
-            "welcomeParty": false,
+            "welcomeParty": true,
             "ceremony": true,
             "reception": true,
-            "farewellBrunch": false
+            "farewellBrunch": true
           }
         },
         {
@@ -1548,10 +1548,10 @@
           "lastName": "",
           "isUnknownGuest": true,
           "events": {
-            "welcomeParty": false,
+            "welcomeParty": true,
             "ceremony": true,
             "reception": true,
-            "farewellBrunch": false
+            "farewellBrunch": true
           }
         },
         {
