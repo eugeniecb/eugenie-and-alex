@@ -2516,7 +2516,7 @@
       ]
     },
     {
-      "partyId": "robbie-thomashow",
+      "partyId": "robbie-thomashow-and-maggie-bennett",
       "members": [
         {
           "id": "robbie-thomashow",
@@ -2529,12 +2529,7 @@
             "reception": true,
             "farewellBrunch": true
           }
-        }
-      ]
-    },
-    {
-      "partyId": "maggie-bennett",
-      "members": [
+        },
         {
           "id": "maggie-bennett",
           "firstName": "Maggie",
