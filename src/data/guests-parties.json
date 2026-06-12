@@ -2048,18 +2048,6 @@
       "partyId": "rita-krasner-and-stephen-reich",
       "members": [
         {
-          "id": "rita-krasner",
-          "firstName": "Rita",
-          "lastName": "Krasner",
-          "isUnknownGuest": false,
-          "events": {
-            "welcomeParty": true,
-            "ceremony": true,
-            "reception": true,
-            "farewellBrunch": true
-          }
-        },
-        {
           "id": "stephen-reich",
           "firstName": "Stephen",
           "lastName": "Reich",
