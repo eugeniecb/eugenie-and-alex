@@ -8,7 +8,7 @@ import { defaultContent, EventItem, GuestTier } from '@/lib/content'
 import { normalize } from '@/lib/search'
 
 type Tier = GuestTier
-interface Guest { name: string; tier: Tier; searchTerms: string[] }
+interface Guest { name: string; firstName?: string; tier: Tier; searchTerms: string[] }
 
 const SESSION_KEY = 'wedding_guest'
 const guests = guestData.guests as Guest[]
@@ -230,7 +230,7 @@ export default function EventsPage() {
             className="mx-auto max-w-2xl px-6 py-12 pb-24 flex flex-col items-center gap-6"
           >
             <p className="font-serif text-center text-lg" style={{ color: '#722F37' }}>
-              Welcome, <span className="italic">{lockedGuest.name.split(' ')[0]}</span>
+              Welcome, <span className="italic">{lockedGuest.firstName ?? lockedGuest.name.split(' ')[0]}</span>
             </p>
             <Divider />
             {events.map((event, i) => (
