@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Plane, Train, MapPin } from 'lucide-react'
+import { Plane, Train, MapPin, Download } from 'lucide-react'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -149,6 +149,17 @@ export default function TravelPage() {
           >
             A few of our favorite spots in Paris to explore before or after the wedding weekend.
           </motion.p>
+          <motion.div {...fadeUp(0.08)}>
+            <a
+              href="/paris-recs.pdf"
+              download="Paris Recs - Eugénie & Alex Wedding Week.pdf"
+              className="inline-flex items-center gap-2 border px-8 py-3 text-sm tracking-widest uppercase transition-colors hover:bg-stone-50 font-serif"
+              style={{ borderColor: '#722F37', color: '#722F37' }}
+            >
+              <Download size={15} strokeWidth={1.5} />
+              Download Our Paris List
+            </a>
+          </motion.div>
           <motion.div className="w-full rounded-lg overflow-hidden border" style={{ borderColor: '#e8d5c4' }} {...fadeUp(0.1)}>
             <iframe
               src="https://www.google.com/maps/d/embed?mid=1aujsarzQx_QMEAYNXUPwT2VBAIZQndY"
