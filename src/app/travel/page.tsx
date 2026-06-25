@@ -68,17 +68,19 @@ export default function TravelPage() {
             {[
               {
                 type: 'Hotel',
-                name: 'Nuage',
-                description: 'To book, please email info@nuage.paris and mention you are reaching out for Eugénie and Alex\'s wedding.',
-                email: 'info@nuage.paris',
-                href: 'https://nuage.paris',
-              },
-              {
-                type: 'Hotel',
                 name: 'Hôtel Perpetual',
                 description: 'To book, please email contact@perpetual.paris and mention you are reaching out for Eugénie and Alex\'s wedding.',
                 email: 'contact@perpetual.paris',
                 href: 'https://hotelperpetual.paris',
+                tag: null,
+              },
+              {
+                type: 'Hotel',
+                name: 'Nuage',
+                description: 'To book, please email info@nuage.paris and mention you are reaching out for Eugénie and Alex\'s wedding.',
+                email: 'info@nuage.paris',
+                href: 'https://nuage.paris',
+                tag: 'Almost sold out — suites only remaining',
               },
               {
                 type: 'House or Rental',
@@ -86,8 +88,9 @@ export default function TravelPage() {
                 description: 'Airbnb has a lot of great options for stays in Paris! Make sure you stay within a reasonable distance of Pavillon Ledoyen to make your experience as easy as possible.',
                 email: null,
                 href: 'https://www.airbnb.com/s/8th-arrondissement--Paris--France/homes',
+                tag: null,
               },
-            ].map(({ type, name, description, email, href }, i) => (
+            ].map(({ type, name, description, email, href, tag }, i) => (
               <motion.div
                 key={name}
                 className="rounded-lg border bg-white px-8 py-8 font-serif text-center space-y-3"
@@ -96,6 +99,11 @@ export default function TravelPage() {
               >
                 <p className="text-sm tracking-widest uppercase" style={{ opacity: 0.6 }}>{type}</p>
                 <p className="text-2xl tracking-[0.15em] uppercase font-semibold">{name}</p>
+                {tag && (
+                  <p className="inline-block text-xs tracking-widest uppercase px-3 py-1 rounded-full font-semibold" style={{ backgroundColor: '#FFF3CD', color: '#856404', border: '1px solid #FFDCA0' }}>
+                    {tag}
+                  </p>
+                )}
                 <p className="text-base leading-relaxed max-w-lg mx-auto" style={{ opacity: 0.85 }}>
                   {email ? (
                     <>
