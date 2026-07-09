@@ -131,10 +131,10 @@ export default function AdminRsvpsPage() {
 
   if (!token) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFF8F0' }}>
-        <div className="flex flex-col items-center gap-6 border rounded-lg bg-white px-12 py-14 shadow-sm" style={{ borderColor: '#e8d5c4' }}>
+      <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: '#FFF8F0' }}>
+        <div className="flex flex-col items-center gap-6 border rounded-lg bg-white px-8 py-12 sm:px-12 sm:py-14 shadow-sm w-full max-w-sm" style={{ borderColor: '#e8d5c4' }}>
           <p className="font-serif text-2xl tracking-wide" style={{ color: '#722F37' }}>Admin Access</p>
-          <form onSubmit={handleLogin} className="flex flex-col items-center gap-4 w-64">
+          <form onSubmit={handleLogin} className="flex flex-col items-center gap-4 w-full">
             <input
               type="password"
               value={loginInput}
@@ -164,18 +164,18 @@ export default function AdminRsvpsPage() {
     <div className="min-h-screen pb-24" style={{ backgroundColor: '#FFF8F0' }}>
 
       {/* Header */}
-      <div className="sticky top-0 z-40 border-b bg-white px-6 py-4 flex items-center justify-between shadow-sm" style={{ borderColor: '#e8d5c4' }}>
+      <div className="sticky top-0 z-40 border-b bg-white px-4 py-3 sm:px-6 sm:py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between shadow-sm" style={{ borderColor: '#e8d5c4' }}>
         <div>
           <p className="font-serif text-xl tracking-wide" style={{ color: '#722F37' }}>RSVPs</p>
           <p className="font-serif text-xs tracking-widest uppercase" style={{ color: '#C5A258' }}>
             {stats ? `${stats.totalResponded} ${stats.totalResponded === 1 ? 'party' : 'parties'} responded` : 'Loading…'}
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button
             onClick={() => fetchRsvps(token)}
             disabled={loading}
-            className="flex items-center gap-2 px-4 py-2 font-serif text-sm border border-stone-200 text-stone-500 hover:bg-stone-50 disabled:opacity-40"
+            className="flex items-center gap-2 px-3 py-2 sm:px-4 font-serif text-sm border border-stone-200 text-stone-500 hover:bg-stone-50 disabled:opacity-40"
           >
             <RefreshCw size={13} className={loading ? 'animate-spin' : ''} />
             Refresh
@@ -183,20 +183,20 @@ export default function AdminRsvpsPage() {
           <button
             onClick={downloadCsv}
             disabled={parties.length === 0}
-            className="flex items-center gap-2 px-4 py-2 font-serif text-sm border border-stone-200 text-stone-500 hover:bg-stone-50 disabled:opacity-40"
+            className="flex items-center gap-2 px-3 py-2 sm:px-4 font-serif text-sm border border-stone-200 text-stone-500 hover:bg-stone-50 disabled:opacity-40"
           >
             <Download size={13} />
-            Download CSV
+            <span className="hidden sm:inline">Download </span>CSV
           </button>
           <a
             href="/admin"
-            className="font-serif text-sm border border-stone-200 px-4 py-2 text-stone-500 hover:bg-stone-50"
+            className="font-serif text-sm border border-stone-200 px-3 py-2 sm:px-4 text-stone-500 hover:bg-stone-50"
           >
             Site editor
           </a>
           <button
             onClick={logout}
-            className="flex items-center gap-2 px-4 py-2 font-serif text-sm border border-stone-200 text-stone-500 hover:bg-stone-50"
+            className="flex items-center gap-2 px-3 py-2 sm:px-4 font-serif text-sm border border-stone-200 text-stone-500 hover:bg-stone-50"
           >
             <LogOut size={13} />
             Log out
@@ -204,7 +204,7 @@ export default function AdminRsvpsPage() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-5xl px-6 py-10 space-y-10">
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-10 space-y-8 sm:space-y-10">
 
         {/* Stats */}
         {stats && (
@@ -269,15 +269,15 @@ export default function AdminRsvpsPage() {
                 style={{ borderColor: '#e8d5c4' }}
               >
                 {/* Party header */}
-                <div className="px-6 py-3 border-b flex items-center justify-between" style={{ borderColor: '#e8d5c4', backgroundColor: '#fffaf6' }}>
+                <div className="px-4 py-3 sm:px-6 border-b flex items-center justify-between gap-3" style={{ borderColor: '#e8d5c4', backgroundColor: '#fffaf6' }}>
                   <p className="font-serif text-base" style={{ color: '#722F37' }}>{party.displayName}</p>
-                  <p className="font-serif text-xs text-stone-400">
+                  <p className="font-serif text-xs text-stone-400 shrink-0">
                     {new Date(party.members[0]?.updatedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                   </p>
                 </div>
 
-                {/* Members */}
-                <table className="w-full">
+                {/* Members — table on larger screens */}
+                <table className="hidden sm:table w-full">
                   <thead>
                     <tr className="border-b" style={{ borderColor: '#f0e6d9' }}>
                       <th className="text-left px-6 py-2 font-serif text-xs text-stone-400 tracking-widest uppercase font-normal">Name</th>
@@ -308,6 +308,40 @@ export default function AdminRsvpsPage() {
                     ))}
                   </tbody>
                 </table>
+
+                {/* Members — stacked cards on mobile */}
+                <div className="sm:hidden">
+                  {party.members.map((member, i) => (
+                    <div
+                      key={member.memberId}
+                      className="px-4 py-4 space-y-3"
+                      style={{ borderTop: i > 0 ? '1px solid #f9f0e8' : 'none' }}
+                    >
+                      <p className="font-serif text-sm" style={{ color: '#722F37' }}>
+                        {member.firstName} {member.lastName}
+                      </p>
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                        {([
+                          ['Welcome', member.attendingWelcomeParty],
+                          ['Ceremony', member.attendingCeremony],
+                          ['Reception', member.attendingReception],
+                          ['Brunch', member.attendingFarewellBrunch],
+                        ] as const).map(([label, attending]) => (
+                          <div key={label} className="flex items-center justify-between border-b pb-1" style={{ borderColor: '#f9f0e8' }}>
+                            <span className="font-serif text-xs tracking-wide uppercase text-stone-400">{label}</span>
+                            <span className="font-serif text-base"><Dot attending={attending} /></span>
+                          </div>
+                        ))}
+                      </div>
+                      {member.dietaryRestrictions && (
+                        <p className="font-serif text-sm text-stone-500">
+                          <span className="text-xs tracking-wide uppercase text-stone-400">Dietary · </span>
+                          {member.dietaryRestrictions}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
