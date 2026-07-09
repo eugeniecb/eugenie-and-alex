@@ -87,10 +87,25 @@ export async function GET(request: Request) {
       return { partyId, displayName: displayNames.join(' & '), members }
     })
 
+    // Parties with no RSVP response at all yet
+    const notResponded = parties
+      .filter((p) => !byParty[p.partyId])
+      .map((p) => {
+        const members = p.members.map((m) => ({
+          id: m.id,
+          firstName: m.isUnknownGuest ? 'Guest' : m.firstName,
+          lastName: m.isUnknownGuest ? '' : m.lastName,
+          isUnknownGuest: m.isUnknownGuest,
+          events: m.events,
+        }))
+        return { partyId: p.partyId, displayName: members.map((m) => `${m.firstName} ${m.lastName}`.trim()).join(' & '), members }
+      })
+
     // Summary stats
     const allMembers = results.flatMap((p) => p.members)
     const stats = {
       totalResponded: results.length,
+      totalNotResponded: notResponded.length,
       welcomeParty: allMembers.filter((m) => m.attendingWelcomeParty).length,
       ceremony: allMembers.filter((m) => m.attendingCeremony).length,
       reception: allMembers.filter((m) => m.attendingReception).length,
@@ -98,7 +113,7 @@ export async function GET(request: Request) {
       dietary: allMembers.filter((m) => m.dietaryRestrictions).length,
     }
 
-    return NextResponse.json({ parties: results, stats })
+    return NextResponse.json({ parties: results, notResponded, stats })
   } finally {
     await pool.end()
   }

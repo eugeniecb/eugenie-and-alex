@@ -23,8 +23,23 @@ interface PartyRsvp {
   members: MemberRsvp[]
 }
 
+interface NotRespondedMember {
+  id: string
+  firstName: string
+  lastName: string
+  isUnknownGuest: boolean
+  events: { welcomeParty: boolean; ceremony: boolean; reception: boolean; farewellBrunch: boolean }
+}
+
+interface NotRespondedParty {
+  partyId: string
+  displayName: string
+  members: NotRespondedMember[]
+}
+
 interface Stats {
   totalResponded: number
+  totalNotResponded: number
   welcomeParty: number
   ceremony: number
   reception: number
@@ -44,10 +59,11 @@ export default function AdminRsvpsPage() {
   const [loginInput, setLoginInput] = useState('')
   const [loginError, setLoginError] = useState(false)
   const [parties, setParties] = useState<PartyRsvp[]>([])
+  const [notResponded, setNotResponded] = useState<NotRespondedParty[]>([])
   const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [filter, setFilter] = useState<'all' | 'dietary'>('all')
+  const [filter, setFilter] = useState<'all' | 'dietary' | 'not-responded'>('all')
 
   useEffect(() => {
     const saved = sessionStorage.getItem(ADMIN_SESSION_KEY)
@@ -67,6 +83,7 @@ export default function AdminRsvpsPage() {
       if (!res.ok) throw new Error('Failed to load')
       const data = await res.json()
       setParties(data.parties)
+      setNotResponded(data.notResponded)
       setStats(data.stats)
     } catch {
       setError('Could not load RSVPs. Please try again.')
@@ -236,8 +253,8 @@ export default function AdminRsvpsPage() {
         )}
 
         {/* Filters */}
-        <div className="flex items-center gap-3">
-          {(['all', 'dietary'] as const).map((f) => (
+        <div className="flex flex-wrap items-center gap-3">
+          {(['all', 'dietary', 'not-responded'] as const).map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
@@ -248,16 +265,65 @@ export default function AdminRsvpsPage() {
                 backgroundColor: filter === f ? '#fdf2f2' : 'transparent',
               }}
             >
-              {f === 'all' ? `All (${parties.length})` : `Dietary notes (${parties.filter(p => p.members.some(m => m.dietaryRestrictions)).length})`}
+              {f === 'all'
+                ? `All (${parties.length})`
+                : f === 'dietary'
+                ? `Dietary notes (${parties.filter(p => p.members.some(m => m.dietaryRestrictions)).length})`
+                : `Not RSVP'd (${notResponded.length})`}
             </button>
           ))}
         </div>
 
         {/* RSVP list */}
-        {loading && !parties.length ? (
+        {loading && !parties.length && !notResponded.length ? (
           <div className="flex justify-center py-12">
             <div className="w-6 h-6 border-2 border-stone-300 border-t-stone-600 rounded-full animate-spin" />
           </div>
+        ) : filter === 'not-responded' ? (
+          notResponded.length === 0 ? (
+            <p className="font-serif text-center text-stone-400 py-12">Everyone has RSVP&apos;d!</p>
+          ) : (
+            <div className="space-y-4">
+              {notResponded.map((party) => (
+                <div
+                  key={party.partyId}
+                  className="rounded-lg border bg-white overflow-hidden"
+                  style={{ borderColor: '#e8d5c4' }}
+                >
+                  <div className="px-4 py-3 sm:px-6" style={{ backgroundColor: '#fffaf6' }}>
+                    <p className="font-serif text-base" style={{ color: '#722F37' }}>{party.displayName}</p>
+                  </div>
+                  <div className="px-4 py-3 sm:px-6 space-y-2">
+                    {party.members.map((member) => (
+                      <div key={member.id} className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="font-serif text-sm" style={{ color: '#722F37' }}>
+                          {member.firstName} {member.lastName}
+                        </p>
+                        <div className="flex gap-2">
+                          {([
+                            ['Welcome', member.events.welcomeParty],
+                            ['Ceremony', member.events.ceremony],
+                            ['Reception', member.events.reception],
+                            ['Brunch', member.events.farewellBrunch],
+                          ] as const)
+                            .filter(([, invited]) => invited)
+                            .map(([label]) => (
+                              <span
+                                key={label}
+                                className="font-serif text-xs tracking-wide uppercase px-2 py-0.5 rounded-full"
+                                style={{ color: '#C5A258', backgroundColor: '#fdf6ec' }}
+                              >
+                                {label}
+                              </span>
+                            ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )
         ) : displayed.length === 0 ? (
           <p className="font-serif text-center text-stone-400 py-12">No RSVPs yet.</p>
         ) : (
