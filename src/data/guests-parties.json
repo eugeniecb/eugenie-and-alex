@@ -2763,6 +2763,35 @@
           }
         }
       ]
+    },
+    {
+      "partyId": "ann-corrin",
+      "members": [
+        {
+          "id": "ann-corrin",
+          "firstName": "Ann",
+          "lastName": "Corrin",
+          "isUnknownGuest": false,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        },
+        {
+          "id": "guest-of-ann-corrin",
+          "firstName": "Guest",
+          "lastName": "",
+          "isUnknownGuest": true,
+          "events": {
+            "welcomeParty": true,
+            "ceremony": true,
+            "reception": true,
+            "farewellBrunch": true
+          }
+        }
+      ]
     }
   ]
 }
