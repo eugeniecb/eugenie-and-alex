@@ -165,7 +165,7 @@ export default function TravelPage() {
                   'Carette',
                   'Miznon',
                   'Derrière',
-                  'Azur Café (breakfast)',
+                  'Café de Flore',
                 ],
               },
               {
@@ -177,7 +177,6 @@ export default function TravelPage() {
                   'Club Marigny',
                   'Aux Prés Cyril Lignac',
                   'La Société',
-                  'Café de Flore',
                   'Mimosa – Riviera Cuisine',
                 ],
               },
