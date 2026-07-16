@@ -196,7 +196,7 @@ export default function TravelPage() {
                 places: [
                   'Patrick Roger (chocolate shop)',
                   'Merci',
-                  'Balibaris – Vieille du Temple',
+                  'Balibaris',
                   'Shakespeare and Company',
                   'Parc Monceau',
                   'Le Bon Marché',
