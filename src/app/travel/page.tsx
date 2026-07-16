@@ -82,14 +82,6 @@ export default function TravelPage() {
                 href: 'https://nuage.paris',
                 tag: 'Almost sold out — suites only remaining',
               },
-              {
-                type: 'House or Rental',
-                name: 'Airbnb',
-                description: 'Airbnb has a lot of great options for stays in Paris! Make sure you stay within a reasonable distance of Pavillon Ledoyen to make your experience as easy as possible.',
-                email: null,
-                href: 'https://www.airbnb.com/s/8th-arrondissement--Paris--France/homes',
-                tag: null,
-              },
             ].map(({ type, name, description, email, href, tag }, i) => (
               <motion.div
                 key={name}
@@ -160,6 +152,75 @@ export default function TravelPage() {
               Download Our Paris List
             </a>
           </motion.div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 w-full">
+            {[
+              {
+                title: 'Casual Dining',
+                places: [
+                  'Azur Café (breakfast)',
+                  "L'interlude Bistrot",
+                  'Café Nuances – Marais',
+                  'Café Nuances – Vendôme',
+                  'Chez Janou',
+                  'Pluto',
+                  'Carette',
+                  'Miznon',
+                  'Derrière',
+                  'Dalloyau',
+                ],
+              },
+              {
+                title: 'Upscale Dining',
+                places: [
+                  'Le Grand Café',
+                  'Café Lapérouse Concorde',
+                  'Gigi Paris',
+                  'Club Marigny',
+                  'Aux Prés Cyril Lignac',
+                  'La Société',
+                  'Café de Flore',
+                  'Mimosa – Riviera Cuisine',
+                ],
+              },
+              {
+                title: 'Museums & Culture',
+                places: [
+                  'Hôtel de la Marine',
+                  'Petit Palais',
+                  'Bourse de Commerce – Pinault Collection',
+                  'Musée National Picasso-Paris',
+                  'Carnavalet Museum',
+                  'Bourdelle Museum',
+                ],
+              },
+              {
+                title: 'Shopping & Other',
+                places: [
+                  'Patrick Roger (chocolate shop)',
+                  'Merci',
+                  'Balibaris – Vieille du Temple',
+                  'Shakespeare and Company',
+                  'Parc Monceau',
+                  'Le Bon Marché',
+                  'Kujten',
+                ],
+              },
+            ].map(({ title, places }, i) => (
+              <motion.div
+                key={title}
+                className="rounded-lg border bg-white px-6 py-6 font-serif space-y-3"
+                style={{ borderColor: '#e8d5c4', color: '#722F37' }}
+                {...fadeUp(i * 0.08)}
+              >
+                <p className="font-semibold tracking-wide text-base text-center">{title}</p>
+                <ul className="text-sm leading-relaxed space-y-1.5" style={{ opacity: 0.85 }}>
+                  {places.map((place) => (
+                    <li key={place}>{place}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
           <motion.div className="w-full rounded-lg overflow-hidden border" style={{ borderColor: '#e8d5c4' }} {...fadeUp(0.1)}>
             <iframe
               src="https://www.google.com/maps/d/embed?mid=1aujsarzQx_QMEAYNXUPwT2VBAIZQndY"

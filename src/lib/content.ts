@@ -137,13 +137,5 @@ export const defaultContent: SiteContent = {
       email: 'contact@perpetual.paris',
       href: 'https://hotelperpetual.paris',
     },
-    {
-      type: 'House or Rental',
-      name: 'Airbnb',
-      description:
-        'Airbnb has a lot of great options for stays in Paris! Make sure you stay within a reasonable distance of Pavillon Ledoyen to make your experience as easy as possible.',
-      email: null,
-      href: 'https://www.airbnb.com/s/8th-arrondissement--Paris--France/homes',
-    },
   ],
 }
