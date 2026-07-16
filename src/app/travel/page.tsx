@@ -157,16 +157,15 @@ export default function TravelPage() {
               {
                 title: 'Casual Dining',
                 places: [
-                  'Azur Café (breakfast)',
+                  'Dalloyau',
                   "L'interlude Bistrot",
-                  'Café Nuances – Marais',
-                  'Café Nuances – Vendôme',
+                  'Café Nuances',
                   'Chez Janou',
                   'Pluto',
                   'Carette',
                   'Miznon',
                   'Derrière',
-                  'Dalloyau',
+                  'Azur Café (breakfast)',
                 ],
               },
               {
