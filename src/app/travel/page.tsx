@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Plane, Train, MapPin, Download } from 'lucide-react'
+import { Plane, Train, MapPin, Download, Bus } from 'lucide-react'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -53,6 +53,35 @@ export default function TravelPage() {
           Everything you need to find your way to Paris and settle in for the weekend.
         </motion.p>
         <Divider />
+      </section>
+
+      {/* ── Shuttle Service ── */}
+      <section className="mx-auto max-w-3xl px-6 pt-4 pb-12">
+        <div className="flex flex-col items-center gap-6">
+          <motion.div {...fadeUp(0)}>
+            <Bus size={28} strokeWidth={1.2} style={{ color: '#C5A258' }} className="mx-auto" />
+          </motion.div>
+          <SectionTitle>Shuttle Service</SectionTitle>
+          <motion.div
+            className="w-full rounded-lg border bg-white px-8 py-8 font-serif leading-relaxed space-y-4"
+            style={{ borderColor: '#e8d5c4', color: '#722F37' }}
+            {...fadeUp(0.1)}
+          >
+            <p style={{ opacity: 0.85 }}>
+              We will run a shuttle to and from the wedding venue for guests staying at the recommended hotels.
+            </p>
+            <div className="space-y-3">
+              <div>
+                <p className="font-semibold tracking-wide">Departing the hotels</p>
+                <p style={{ opacity: 0.85 }}>4:30 PM</p>
+              </div>
+              <div>
+                <p className="font-semibold tracking-wide">Departing the venue</p>
+                <p style={{ opacity: 0.85 }}>1:10 AM</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* ── Where to Stay ── */}
@@ -315,7 +344,6 @@ export default function TravelPage() {
           </div>
         </div>
       </section>
-
 
     </main>
   )
