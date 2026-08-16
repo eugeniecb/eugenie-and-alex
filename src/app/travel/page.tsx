@@ -68,16 +68,16 @@ export default function TravelPage() {
             {...fadeUp(0.1)}
           >
             <p style={{ opacity: 0.85 }}>
-              We will run a shuttle to and from the wedding venue for guests staying at the recommended hotels.
+              On Sunday, we will run a shuttle to and from the wedding venue for guests staying at the recommended hotels.
             </p>
-            <div className="space-y-3">
-              <div>
-                <p className="font-semibold tracking-wide">Departing the hotels</p>
-                <p style={{ opacity: 0.85 }}>4:30 PM</p>
+            <div className="grid gap-4 sm:grid-cols-2 pt-2">
+              <div className="rounded-lg text-center py-4" style={{ backgroundColor: '#FFF3E8' }}>
+                <p className="text-sm tracking-widest uppercase font-semibold" style={{ opacity: 0.7 }}>Departing the hotels</p>
+                <p className="text-4xl sm:text-5xl font-semibold" style={{ color: '#C5A258' }}>4:30 PM</p>
               </div>
-              <div>
-                <p className="font-semibold tracking-wide">Departing the venue</p>
-                <p style={{ opacity: 0.85 }}>1:10 AM</p>
+              <div className="rounded-lg text-center py-4" style={{ backgroundColor: '#FFF3E8' }}>
+                <p className="text-sm tracking-widest uppercase font-semibold" style={{ opacity: 0.7 }}>Departing the venue</p>
+                <p className="text-4xl sm:text-5xl font-semibold" style={{ color: '#C5A258' }}>1:10 AM</p>
               </div>
             </div>
           </motion.div>
