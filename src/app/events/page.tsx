@@ -2,7 +2,7 @@
 
 import { useState, useEffect, FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search } from 'lucide-react'
+import { Search, Bus } from 'lucide-react'
 import guestData from '@/data/guests.json'
 import { defaultContent, EventItem, GuestTier } from '@/lib/content'
 import { normalize } from '@/lib/search'
@@ -132,6 +132,49 @@ export default function EventsPage() {
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         />
+      </section>
+
+      {/* ── Shuttle Service ── */}
+      <section className="mx-auto max-w-3xl px-6 pt-4 pb-12">
+        <div className="flex flex-col items-center gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Bus size={28} strokeWidth={1.2} style={{ color: '#C5A258' }} className="mx-auto" />
+          </motion.div>
+          <motion.h2
+            className="font-serif text-3xl sm:text-4xl text-center"
+            style={{ color: '#722F37' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+          >
+            Shuttle Service
+          </motion.h2>
+          <motion.div
+            className="w-full rounded-lg border bg-white px-8 py-8 font-serif leading-relaxed space-y-4"
+            style={{ borderColor: '#e8d5c4', color: '#722F37' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <p style={{ opacity: 0.85 }}>
+              On Sunday, we will run a shuttle to and from the wedding venue for guests staying at the recommended hotels.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 pt-2">
+              <div className="rounded-lg text-center py-4" style={{ backgroundColor: '#FFF3E8' }}>
+                <p className="text-sm tracking-widest uppercase font-semibold" style={{ opacity: 0.7 }}>Departing the hotels</p>
+                <p className="text-4xl sm:text-5xl font-semibold" style={{ color: '#C5A258' }}>4:30 PM</p>
+              </div>
+              <div className="rounded-lg text-center py-4" style={{ backgroundColor: '#FFF3E8' }}>
+                <p className="text-sm tracking-widest uppercase font-semibold" style={{ opacity: 0.7 }}>Departing the venue</p>
+                <p className="text-4xl sm:text-5xl font-semibold" style={{ color: '#C5A258' }}>1:10 AM</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       <AnimatePresence mode="wait">
